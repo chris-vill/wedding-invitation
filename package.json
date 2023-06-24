@@ -12,6 +12,8 @@
   "devDependencies": {
     "@types/node": "^18",
     "@volar/vue-language-plugin-pug": "^1.6.5",
+    "eslint": "^8.43.0",
+    "eslint-plugin-vue": "^9.15.1",
     "nuxt": "^3.5.1",
     "prettier": "^2.8.8",
     "pug": "^3.0.2",
