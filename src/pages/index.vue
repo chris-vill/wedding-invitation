@@ -1,7 +1,7 @@
 <script setup>
 definePageMeta({
-  layout: "main"
-})
+  layout: "main",
+});
 </script>
 
 <template lang="pug">
