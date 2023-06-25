@@ -29,6 +29,10 @@ const navItems = [
     route: "/entourage",
   },
   {
+    label: "Gallery",
+    route: "/gallery",
+  },
+  {
     label: "RSVP",
     route: "/rsvp",
   },

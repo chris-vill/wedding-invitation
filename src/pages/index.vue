@@ -27,11 +27,11 @@ definePageMeta({
 .HomePage
   .couple
     +montserrat-32
-    +m-y(3.375rem)
     align-items: center
     color: $purple-dark-20
     display: flex
     flex-direction: column
+    margin-bottom: 3.375rem
 
   .when
     +montserrat-18

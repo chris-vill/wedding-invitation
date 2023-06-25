@@ -11,14 +11,20 @@ div.main-layout
 @use "~/styles/abstracts" as *
 
 .main-layout
+  display: flex
+  flex-direction: column
   height: 100%
-  width: 100%
   padding: 4rem 1rem 1rem
+  width: 100%
+
+  .NavBar
+    margin: 0 auto 2rem
+    width: 100%
+
+  .content-wrapper
+    margin: auto
 
 +media((tablet, desktop))
   .main-layout
     +p-x(2rem)
-
-.NavBar
-  margin: 0 auto 2rem
 </style>
