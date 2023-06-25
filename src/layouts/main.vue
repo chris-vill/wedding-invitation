@@ -18,7 +18,7 @@ div.main-layout
   width: 100%
 
   .NavBar
-    margin: 0 auto 2rem
+    margin: 0 auto
     width: 100%
 
   .content-wrapper
