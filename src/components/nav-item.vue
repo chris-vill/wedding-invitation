@@ -8,8 +8,9 @@ div Nav
 </template>
 
 <style lang="sass" scoped>
+@use "~/styles/abstracts" as *
+
 div
-  font-family: Montserrat
-  font-weight: 900
-  color: red
+  +montserrat-14-bold
+  color: $purple
 </style>

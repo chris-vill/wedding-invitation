@@ -1,0 +1,9 @@
+=montserratSrc($filename)
+  src: url("/assets/fonts/Montserrat/" + $filename + ".otf") format('opentype')
+
+=font-face($name, $style, $weight, $filename)
+  @font-face
+    font-family: $name
+    font-weight: $weight
+    font-style: $style
+    +montserratSrc($filename)

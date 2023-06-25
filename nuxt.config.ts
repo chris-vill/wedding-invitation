@@ -5,9 +5,5 @@ export default defineNuxtConfig({
     strict: true,
     typeCheck: true,
   },
-  css: [
-    "@/styles/base/reset.andy-bell.sass",
-    "@/styles/base/reset.eric-meyer.sass",
-    "@/styles/base/main.sass",
-  ],
+  css: ["~/styles/reset.sass", "~/styles/main.sass"],
 });

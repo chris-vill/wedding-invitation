@@ -2,6 +2,7 @@
 
 <template lang="pug">
 div.container
+  nav-item
   slot
 </template>
 
