@@ -78,7 +78,7 @@ definePageMeta({
       flex-direction: column
 
   h2
-    +montserrat-20-medium
+    +montserrat-medium(20)
     color: $dark
     margin-bottom: 1rem
 
@@ -86,7 +86,7 @@ definePageMeta({
       margin-top: 2rem
 
   span
-    +montserrat-18-medium
+    +montserrat-medium(18)
     color: $dark
     display: block
 

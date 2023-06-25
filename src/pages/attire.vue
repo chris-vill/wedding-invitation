@@ -34,5 +34,5 @@ definePageMeta({
     width: 17.5rem
 
   span
-    +montserrat-18-semibold
+    +montserrat-semibold(18)
 </style>

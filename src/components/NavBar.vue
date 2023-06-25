@@ -53,4 +53,8 @@ const navItems = [
 
   :deep(.Icon path)
     fill: $purple
+
+  +media((desktop))
+    :deep(.Icon)
+      display: none
 </style>

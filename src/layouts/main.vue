@@ -1,5 +1,5 @@
 <template lang="pug">
-div.main-layout
+div.MainLayout
   NavBar
   div.content-wrapper
     slot
@@ -10,7 +10,7 @@ div.main-layout
 <style lang="sass" scoped>
 @use "~/styles/abstracts" as *
 
-.main-layout
+.MainLayout
   display: flex
   flex-direction: column
   height: 100%
@@ -18,6 +18,7 @@ div.main-layout
   width: 100%
 
   .NavBar
+    justify-content: center
     margin: 0 auto
     width: 100%
 
@@ -25,6 +26,6 @@ div.main-layout
     margin: auto
 
 +media((tablet, desktop))
-  .main-layout
+  .MainLayout
     +p-x(2rem)
 </style>

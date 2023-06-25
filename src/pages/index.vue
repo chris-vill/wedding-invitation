@@ -26,40 +26,40 @@ definePageMeta({
 
 .HomePage
   .couple
-    +montserrat-32
+    +playlist-script(56)
     align-items: center
     color: $purple-dark-20
     display: flex
     flex-direction: column
-    margin-bottom: 3.375rem
+    margin-bottom: rem(54)
 
   .when
-    +montserrat-18
+    +sensa-wild-fill(28)
     color: $dark
     display: flex
-    gap: 1.875rem
+    gap: rem(30)
     justify-content: center
-    margin-bottom: 0.75rem
+    margin-bottom: rem(24)
 
   .where
-    +montserrat-12
+    +sensa-wild-fill(20)
     display: flex
     color: $dark
     justify-content: center
-    margin-bottom: 1rem
+    margin-bottom: rem(24)
 
   .deadline
     align-items: center
     color: $dark
     display: flex
     flex-direction: column
-    gap: 0.25rem
+    gap: rem(12)
 
     span:first-child
-      +montserrat-12
+      +sensa-wild-fill(18)
 
     span:last-child
-      +montserrat-14-bold
+      +sensa-wild-fill(20)
 </style>
 
 <!-- 3:30pm -->

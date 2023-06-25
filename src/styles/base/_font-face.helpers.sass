@@ -1,9 +1,14 @@
-=montserratSrc($filename)
-  src: url("/assets/fonts/Montserrat/" + $filename + ".otf") format('opentype')
-
 =font-face($name, $style, $weight, $filename)
   @font-face
-    font-family: $name
+    font-family: unquote($name)
     font-weight: $weight
     font-style: $style
-    +montserratSrc($filename)
+    
+    @if $name == "Montserrat"
+      src: url("/assets/fonts/Montserrat/" + $filename + ".otf") format('opentype')
+
+    @if $name == "Playlist Script"
+      src: url("/assets/fonts/Playlist/" + $filename + ".otf") format('opentype')
+
+    @if $name == "Sensa Wild Fill"
+      src: url("/assets/fonts/Sensa/" + $filename + ".woff2") format('woff2')

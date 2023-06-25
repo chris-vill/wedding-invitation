@@ -1,288 +1,66 @@
 @use "./fonts.helpers" as *
 
-// [START] font-style = normal, font-weight = normal
-=montserrat-32
-  +font(Montserrat, normal, 400, 2rem)
+// Montserrat
+=montserrat-thin($size)
+  +font(Montserrat, normal, 100, $size)
 
-=montserrat-28
-  +font(Montserrat, normal, 400, 1.75rem)
+=montserrat-italic-thin($size)
+  +font(Montserrat, italic, 100, $size)
 
-=montserrat-24
-  +font(Montserrat, normal, 400, 1.5rem)
+=montserrat-extralight($size)
+  +font(Montserrat, normal, 200, $size)
 
-=montserrat-20
-  +font(Montserrat, normal, 400, 1.25rem)
+=montserrat-italic-extralight($size)
+  +font(Montserrat, italic, 200, $size)
 
-=montserrat-18
-  +font(Montserrat, normal, 400, 1.125rem)
+=montserrat-light($size)
+  +font(Montserrat, normal, 300, $size)
 
-=montserrat-14
-  +font(Montserrat, normal, 400, 0.875rem)
+=montserrat-italic-light($size)
+  +font(Montserrat, italic, 300, $size)
 
-=montserrat-12
-  +font(Montserrat, normal, 400, 0.75rem)
-// [END] font-style = normal, font-weight = normal
+=montserrat($size)
+  +font(Montserrat, normal, 400, $size)
 
+=montserrat-italic($size)
+  +font(Montserrat, italic, 400, $size)
 
-// [START] font-style = italic, font-weight = normal
-=montserrat-32-italic
-  +font(Montserrat, italic, 400, 2rem)
+=montserrat-medium($size)
+  +font(Montserrat, normal, 500, $size)
 
-=montserrat-28-italic
-  +font(Montserrat, italic, 400, 1.75rem)
+=montserrat-italic-medium($size)
+  +font(Montserrat, italic, 500, $size)
 
-=montserrat-24-italic
-  +font(Montserrat, italic, 400, 1.5rem)
+=montserrat-semibold($size)
+  +font(Montserrat, normal, 600, $size)
 
-=montserrat-20-italic
-  +font(Montserrat, italic, 400, 1.25rem)
+=montserrat-italic-semibold($size)
+  +font(Montserrat, italic, 600, $size)
 
-=montserrat-18-italic
-  +font(Montserrat, italic, 400, 1.125rem)
+=montserrat-bold($size)
+  +font(Montserrat, normal, 700, $size)
 
-=montserrat-14-italic
-  +font(Montserrat, italic, 400, 0.875rem)
+=montserrat-italic-bold($size)
+  +font(Montserrat, italic, 700, $size)
 
-=montserrat-12-italic
-  +font(Montserrat, italic, 400, 0.75rem)
-// [END] font-style = italic, font-weight = normal
+=montserrat-extrabold($size)
+  +font(Montserrat, normal, 700, $size)
 
+=montserrat-italic-extrabold($size)
+  +font(Montserrat, italic, 700, $size)
 
-// [START] font-style = normal, font-weight = medium
-=montserrat-32-medium
-  +font(Montserrat, normal, 500, 2rem)
+=montserrat-black($size)
+  +font(Montserrat, normal, 900, $size)
 
-=montserrat-28-medium
-  +font(Montserrat, normal, 500, 1.75rem)
+=montserrat-italic-black($size)
+  +font(Montserrat, italic, 900, $size)
 
-=montserrat-24-medium
-  +font(Montserrat, normal, 500, 1.5rem)
 
-=montserrat-20-medium
-  +font(Montserrat, normal, 500, 1.25rem)
+// Playlist Script
+=playlist-script($size)
+  +font(Playlist Script, normal, 400, $size, 150%)
 
-=montserrat-18-medium
-  +font(Montserrat, normal, 500, 1.125rem)
 
-=montserrat-14-medium
-  +font(Montserrat, normal, 500, 0.875rem)
-
-=montserrat-12-medium
-  +font(Montserrat, normal, 500, 0.75rem)
-// [END] font-style = normal, font-weight = medium
-
-
-// [START] font-style = italic, font-weight = medium
-=montserrat-32-italic-medium
-  +font(Montserrat, italic, 500, 2rem)
-
-=montserrat-28-italic-medium
-  +font(Montserrat, italic, 500, 1.75rem)
-
-=montserrat-24-italic-medium
-  +font(Montserrat, italic, 500, 1.5rem)
-
-=montserrat-20-italic-medium
-  +font(Montserrat, italic, 500, 1.25rem)
-
-=montserrat-18-italic-medium
-  +font(Montserrat, italic, 500, 1.125rem)
-
-=montserrat-14-italic-medium
-  +font(Montserrat, italic, 500, 0.875rem)
-
-=montserrat-12-italic-medium
-  +font(Montserrat, italic, 500, 0.75rem)
-// [END] font-style = italic, font-weight = medium
-
-
-// [START] font-style = normal, font-weight = semibold
-=montserrat-32-semibold
-  +font(Montserrat, normal, 600, 2rem)
-
-=montserrat-28-semibold
-  +font(Montserrat, normal, 600, 1.75rem)
-
-=montserrat-24-semibold
-  +font(Montserrat, normal, 600, 1.5rem)
-
-=montserrat-20-semibold
-  +font(Montserrat, normal, 600, 1.25rem)
-
-=montserrat-18-semibold
-  +font(Montserrat, normal, 600, 1.125rem)
-
-=montserrat-14-semibold
-  +font(Montserrat, normal, 600, 0.875rem)
-
-=montserrat-12-semibold
-  +font(Montserrat, normal, 600, 0.75rem)
-// [END] font-style = normal, font-weight = semibold
-
-
-// [START] font-style = italic, font-weight = semibold
-=montserrat-32-italic-semibold
-  +font(Montserrat, italic, 600, 2rem)
-
-=montserrat-28-italic-semibold
-  +font(Montserrat, italic, 600, 1.75rem)
-
-=montserrat-24-italic-semibold
-  +font(Montserrat, italic, 600, 1.5rem)
-
-=montserrat-20-italic-semibold
-  +font(Montserrat, italic, 600, 1.25rem)
-
-=montserrat-18-italic-semibold
-  +font(Montserrat, italic, 600, 1.125rem)
-
-=montserrat-14-italic-semibold
-  +font(Montserrat, italic, 600, 0.875rem)
-
-=montserrat-12-italic-semibold
-  +font(Montserrat, italic, 600, 0.75rem)
-// [END] font-style = italic, font-weight = semibold
-
-
-// [START] font-style = normal, font-weight = bold
-=montserrat-32-bold
-  +font(Montserrat, normal, 700, 2rem)
-
-=montserrat-28-bold
-  +font(Montserrat, normal, 700, 1.75rem)
-
-=montserrat-24-bold
-  +font(Montserrat, normal, 700, 1.5rem)
-
-=montserrat-20-bold
-  +font(Montserrat, normal, 700, 1.25rem)
-
-=montserrat-18-bold
-  +font(Montserrat, normal, 700, 1.125rem)
-
-=montserrat-14-bold
-  +font(Montserrat, normal, 700, 0.875rem)
-
-=montserrat-12-bold
-  +font(Montserrat, normal, 700, 0.75rem)
-// [END] font-style = normal, font-weight = bold
-
-
-// [START] font-style = italic, font-weight = bold
-=montserrat-32-italic-bold
-  +font(Montserrat, italic, 700, 2rem)
-
-=montserrat-28-italic-bold
-  +font(Montserrat, italic, 700, 1.75rem)
-
-=montserrat-24-italic-bold
-  +font(Montserrat, italic, 700, 1.5rem)
-
-=montserrat-20-italic-bold
-  +font(Montserrat, italic, 700, 1.25rem)
-
-=montserrat-18-italic-bold
-  +font(Montserrat, italic, 700, 1.125rem)
-
-=montserrat-14-italic-bold
-  +font(Montserrat, italic, 700, 0.875rem)
-
-=montserrat-12-italic-bold
-  +font(Montserrat, italic, 700, 0.75rem)
-// [END] font-style = italic, font-weight = bold
-
-
-// [START] font-style = normal, font-weight = extrabold
-=montserrat-32-extrabold
-  +font(Montserrat, normal, 700, 2rem)
-
-=montserrat-28-extrabold
-  +font(Montserrat, normal, 700, 1.75rem)
-
-=montserrat-24-extrabold
-  +font(Montserrat, normal, 700, 1.5rem)
-
-=montserrat-20-extrabold
-  +font(Montserrat, normal, 700, 1.25rem)
-
-=montserrat-18-extrabold
-  +font(Montserrat, normal, 700, 1.125rem)
-
-=montserrat-14-extrabold
-  +font(Montserrat, normal, 700, 0.875rem)
-
-=montserrat-12-extrabold
-  +font(Montserrat, normal, 700, 0.75rem)
-// [END] font-style = normal, font-weight = extrabold
-
-
-// [START] font-style = italic, font-weight = extrabold
-=montserrat-32-italic-extrabold
-  +font(Montserrat, italic, 700, 2rem)
-
-=montserrat-28-italic-extrabold
-  +font(Montserrat, italic, 700, 1.75rem)
-
-=montserrat-24-italic-extrabold
-  +font(Montserrat, italic, 700, 1.5rem)
-
-=montserrat-20-italic-extrabold
-  +font(Montserrat, italic, 700, 1.25rem)
-
-=montserrat-18-italic-extrabold
-  +font(Montserrat, italic, 700, 1.125rem)
-
-=montserrat-14-italic-extrabold
-  +font(Montserrat, italic, 700, 0.875rem)
-
-=montserrat-12-italic-extrabold
-  +font(Montserrat, italic, 700, 0.75rem)
-// [END] font-style = italic, font-weight = extrabold
-
-
-// [START] font-style = normal, font-weight = black
-=montserrat-32-black
-  +font(Montserrat, normal, 900, 2rem)
-
-=montserrat-28-black
-  +font(Montserrat, normal, 900, 1.75rem)
-
-=montserrat-24-black
-  +font(Montserrat, normal, 900, 1.5rem)
-
-=montserrat-20-black
-  +font(Montserrat, normal, 900, 1.25rem)
-
-=montserrat-18-black
-  +font(Montserrat, normal, 900, 1.125rem)
-
-=montserrat-14-black
-  +font(Montserrat, normal, 900, 0.875rem)
-
-=montserrat-12-black
-  +font(Montserrat, normal, 900, 0.75rem)
-// [END] font-style = normal, font-weight = black
-
-
-// [START] font-style = italic, font-weight = black
-=montserrat-32-italic-black
-  +font(Montserrat, italic, 900, 2rem)
-
-=montserrat-28-italic-black
-  +font(Montserrat, italic, 900, 1.75rem)
-
-=montserrat-24-italic-black
-  +font(Montserrat, italic, 900, 1.5rem)
-
-=montserrat-20-italic-black
-  +font(Montserrat, italic, 900, 1.25rem)
-
-=montserrat-18-italic-black
-  +font(Montserrat, italic, 900, 1.125rem)
-
-=montserrat-14-italic-black
-  +font(Montserrat, italic, 900, 0.875rem)
-
-=montserrat-12-italic-black
-  +font(Montserrat, italic, 900, 0.75rem)
-// [END] font-style = italic, font-weight = black
+// Sensa Wild Fill
+=sensa-wild-fill($size)
+  +font(Sensa Wild Fill, normal, 400, $size)

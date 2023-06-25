@@ -19,7 +19,7 @@ const props = defineProps({
 @use "~/styles/abstracts" as *
 
 a
-  +montserrat-14-bold
+  +montserrat-bold(14)
   color: $purple-dark-40
   display: block
   padding: 0.5rem 1rem

@@ -1,5 +1,8 @@
-=font($family, $style, $weight, $size)
+@use "sass:math"
+  
+=font($family, $style, $weight, $size, $line-height: 100%)
   font-family: $family
   font-weight: $weight
   font-style: $style
-  font-size: $size
+  font-size: math.div($size, 16) + rem
+  line-height: $line-height
