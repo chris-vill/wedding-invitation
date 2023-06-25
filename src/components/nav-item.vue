@@ -9,5 +9,7 @@ div Nav
 
 <style lang="sass" scoped>
 div
+  font-family: Montserrat
+  font-weight: 900
   color: red
 </style>
