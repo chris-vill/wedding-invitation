@@ -1,3 +1,21 @@
+=m-x($val1, $val2: null)
+  margin-left: $val1
+
+  @if $val2 == null
+    margin-right: $val1
+
+  @else
+    margin-right: $val2
+
+=m-y($val1, $val2: null)
+  margin-top: $val1
+
+  @if $val2 == null
+    margin-bottom: $val1
+
+  @else
+    margin-bottom: $val2
+  
 =p-x($val1, $val2: null)
   padding-left: $val1
 
