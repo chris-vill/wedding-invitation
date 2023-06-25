@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 const asd: string = "123";
+console.log(asd);
 </script>
 
 <template lang="pug">

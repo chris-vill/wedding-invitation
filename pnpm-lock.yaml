@@ -25,6 +25,9 @@ devDependencies:
   '@types/node':
     specifier: ^18
     version: 18.0.0
+  '@typescript-eslint/parser':
+    specifier: ^5.60.0
+    version: 5.60.0(eslint@8.43.0)(typescript@5.0.4)
   '@volar/vue-language-plugin-pug':
     specifier: ^1.6.5
     version: 1.6.5
@@ -64,6 +67,9 @@ devDependencies:
   typescript:
     specifier: ^5.0.4
     version: 5.0.4
+  typescript-eslint:
+    specifier: 0.0.1-alpha.0
+    version: 0.0.1-alpha.0
   vue-tsc:
     specifier: ^1.6.5
     version: 1.6.5(typescript@5.0.4)
@@ -4587,6 +4593,26 @@ packages:
     resolution: {integrity: sha512-6i0aC7jV6QzQB8ne1joVZ0eSFIstHsCrobmOtghM11yGlH0j43FKL2UhWdELkyps0zuf7qVTUVCCR+tgSlyLLw==}
     dependencies:
       '@types/yargs-parser': 21.0.0
+    dev: true
+
+  /@typescript-eslint/parser@5.60.0(eslint@8.43.0)(typescript@5.0.4):
+    resolution: {integrity: sha512-jBONcBsDJ9UoTWrARkRRCgDz6wUggmH5RpQVlt7BimSwaTkTjwypGzKORXbR4/2Hqjk9hgwlon2rVQAjWNpkyQ==}
+    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    peerDependencies:
+      eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
+      typescript: '*'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      '@typescript-eslint/scope-manager': 5.60.0
+      '@typescript-eslint/types': 5.60.0
+      '@typescript-eslint/typescript-estree': 5.60.0(typescript@5.0.4)
+      debug: 4.3.4
+      eslint: 8.43.0
+      typescript: 5.0.4
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /@typescript-eslint/scope-manager@5.60.0:
@@ -10761,6 +10787,10 @@ packages:
     resolution: {integrity: sha512-FD5uYQSNkVTX4b3lvtifP+SR3bARWGmKe/uyp5BfuW2ZUCYG7vHKPddrteLU06Uh68woRaYIX+Sbs2nnySpGLw==}
     dependencies:
       semver: 7.5.1
+    dev: true
+
+  /typescript-eslint@0.0.1-alpha.0:
+    resolution: {integrity: sha512-1hNKM37dAWML/2ltRXupOq2uqcdRQyDFphl+341NTPXFLLLiDhErXx8VtaSLh3xP7SyHZdcCgpt9boYYVb3fQg==}
     dev: true
 
   /typescript@5.0.4:
