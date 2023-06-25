@@ -1,0 +1,32 @@
+<template lang="pug">
+NuxtLink(ref="nuxtLinkRef" :to="props.route") {{ props.label }}
+</template>
+
+<script lang="ts" setup>
+const props = defineProps({
+  label: {
+    type: String,
+    required: true,
+  },
+  route: {
+    type: String,
+    required: true,
+  },
+});
+</script>
+
+<style lang="sass" scoped>
+@use "~/styles/abstracts" as *
+
+a
+  +montserrat-14-bold
+  color: $purple-dark-40
+  display: block
+  padding: 0.5rem 1rem
+
+  &:hover
+    color: $purple
+
+  &.router-link-exact-active
+    color: $purple-light-40
+</style>

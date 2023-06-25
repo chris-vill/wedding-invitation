@@ -1,16 +1,24 @@
-<script setup></script>
-
 <template lang="pug">
-div.container
-  nav-item
-  slot
+div.main-layout
+  NavBar
+  div.content-wrapper
+    slot
 </template>
 
-<style lang="sass" scoped>
-#__nuxt
-  height: 100
+<script setup></script>
 
-.container
+<style lang="sass" scoped>
+@use "~/styles/abstracts" as *
+
+.main-layout
   height: 100%
   width: 100%
+  padding: 4rem 1rem 1rem
+
++media((tablet, desktop))
+  .main-layout
+    +p-x(2rem)
+
+.NavBar
+  margin: 0 auto 2rem
 </style>

@@ -1,0 +1,15 @@
+@use "~/styles/variables/breakpoints"
+  
+=media($devices)
+  @each $device in $devices
+    @if $device == mobile
+      @media (breakpoints.$tablet-min > width)
+        @content
+    
+    @if $device == tablet
+      @media (breakpoints.$desktop-min > width > breakpoints.$tablet-min)
+        @content
+
+    @if $device == desktop
+      @media (width > breakpoints.$desktop-min)
+        @content

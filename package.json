@@ -22,6 +22,7 @@
     "@types/node": "^18",
     "@typescript-eslint/parser": "^5.60.0",
     "@volar/vue-language-plugin-pug": "^1.6.5",
+    "@vue/language-plugin-pug": "^1.8.1",
     "eslint": "^8.43.0",
     "eslint-plugin-storybook": "^0.6.12",
     "eslint-plugin-vue": "^9.15.1",

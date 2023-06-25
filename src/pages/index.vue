@@ -1,10 +1,13 @@
-<script setup>
+<template lang="pug">
+div Hello
+</template>
+
+<script lang="ts" setup>
 definePageMeta({
   layout: "main",
 });
 </script>
 
-<template lang="pug">
-</template>
+<style lang="sass" scoped></style>
 
 <!-- 3:30pm -->

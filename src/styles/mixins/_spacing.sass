@@ -1,0 +1,17 @@
+=p-x($val1, $val2: null)
+  padding-left: $val1
+
+  @if $val2 == null
+    padding-right: $val1
+
+  @else
+    padding-right: $val2
+
+=p-y($val1, $val2: null)
+  padding-top: $val1
+
+  @if $val2 == null
+    padding-bottom: $val1
+
+  @else
+    padding-bottom: $val2

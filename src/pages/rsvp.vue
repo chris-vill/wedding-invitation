@@ -1,10 +1,12 @@
-<script lang="ts" setup>
-const asd: string = "123";
-</script>
-
 <template lang="pug">
 div RSVP
 </template>
+
+<script lang="ts" setup>
+definePageMeta({
+  layout: "main",
+});
+</script>
 
 <style lang="sass" scoped>
 div
