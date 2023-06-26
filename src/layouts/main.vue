@@ -15,7 +15,7 @@ div.MainLayout
   display: flex
   flex-direction: column
   height: 100%
-  padding: 2.5rem 1rem 1rem
+  padding: 2.5rem 1rem
   position: relative
   width: 100%
 

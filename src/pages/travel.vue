@@ -20,7 +20,7 @@ definePageMeta({
 @use "@/styles/abstracts" as *
 
 .TravelPage
-  +p-y(rem(48), rem(48))
+  padding-top: rem(48)
 
   h3
     +sensa-wild-fill(22)
@@ -32,7 +32,7 @@ definePageMeta({
     align-items: center
     display: flex
     flex-wrap: wrap
-    gap: rem(38)
+    gap: rem(48)
     justify-content: center
 
   .qr-code
