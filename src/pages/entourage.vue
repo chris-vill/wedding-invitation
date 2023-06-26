@@ -76,18 +76,19 @@ definePageMeta({
       align-items: center
       display: flex
       flex-direction: column
+      min-width: rem(300)
 
   h2
-    +montserrat-medium(20)
-    color: $dark
+    +sensa-wild-fill(28)
+    color: $purple
     margin-bottom: 1rem
 
     &:not(:first-of-type)
       margin-top: 2rem
 
   span
-    +montserrat-medium(18)
-    color: $dark
+    +playlist-script(24)
+    color: $purple
     display: block
 
     &:not(:last-of-type)

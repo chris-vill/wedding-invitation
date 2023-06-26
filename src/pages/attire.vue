@@ -34,5 +34,6 @@ definePageMeta({
     width: 17.5rem
 
   span
-    +montserrat-semibold(18)
+    +sensa-wild-fill(24)
+    color: $purple
 </style>
