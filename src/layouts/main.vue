@@ -2,8 +2,8 @@
 //- 1 2 3 2
 div.MainLayout
   NavBar
-  img(src="@/assets/images/background.png")
-  img(src="@/assets/images/dress_code.png")
+  img(src="/images/background.png")
+  img(src="/images/dress_code.png")
   div.content-wrapper
     slot
 </template>
