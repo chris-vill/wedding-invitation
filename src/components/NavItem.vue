@@ -16,7 +16,7 @@ const props = defineProps({
 </script>
 
 <style lang="sass" scoped>
-@use "~/styles/abstracts" as *
+@use "~styles/abstracts" as *
 
 a
   +montserrat-bold(14)

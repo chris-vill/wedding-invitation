@@ -58,7 +58,7 @@ definePageMeta({
 </script>
 
 <style lang="sass" scoped>
-@use "~/styles/abstracts" as *
+@use "styles/abstracts" as *
 
 .EntouragePage
   +p-y(2rem, 1rem)

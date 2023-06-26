@@ -40,7 +40,7 @@ const navItems = [
 </script>
 
 <style lang="sass" scoped>
-@use "~/styles/abstracts" as *
+@use "~styles/abstracts" as *
 
 .NavBar
   align-items: center

@@ -23,7 +23,7 @@ definePageMeta({
 </script>
 
 <style lang="sass" scoped>
-@use "~/styles/abstracts" as *
+@use "~styles/abstracts" as *
 
 .HomePage
   .couple
