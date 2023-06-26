@@ -2,7 +2,6 @@
 //- 1 2 3 2
 div.MainLayout
   NavBar
-  img(src="/images/background.png")
   div.content-wrapper
     slot
 </template>
