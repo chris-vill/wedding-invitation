@@ -3,6 +3,7 @@
 div.MainLayout
   NavBar
   img(src="@/assets/images/background.png")
+  img(src="@/assets/images/dress_code.png")
   div.content-wrapper
     slot
 </template>
