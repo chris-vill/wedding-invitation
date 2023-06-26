@@ -61,15 +61,15 @@ definePageMeta({
 @use "@/styles/abstracts" as *
 
 .EntouragePage
-  +p-y(2rem, 1rem)
+  +p-y(rem(32), rem(16))
   display: flex
   flex-direction: column
-  gap: 2rem
+  gap: rem(32)
 
   section
     display: flex
     flex-wrap: wrap
-    gap: 2rem
+    gap: rem(32)
     justify-content: center
 
     & > div
@@ -80,11 +80,11 @@ definePageMeta({
 
   h2
     +sensa-wild-fill(28)
-    color: $purple
-    margin-bottom: 1rem
+    color: $purple-dark-20
+    margin-bottom: rem(16)
 
     &:not(:first-of-type)
-      margin-top: 2rem
+      margin-top: rem(32)
 
   span
     +playlist-script(24)
@@ -92,5 +92,5 @@ definePageMeta({
     display: block
 
     &:not(:last-of-type)
-      margin-bottom: 0.5rem
+      margin-bottom: rem(8)
 </style>
