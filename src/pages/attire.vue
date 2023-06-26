@@ -1,7 +1,6 @@
 <template lang="pug">
 div.AttirePage
   div.dress-code
-    img(src="/images/background.png")
     img(src="/images/dress_code.png")
     span Casual, Semi-formal
 
