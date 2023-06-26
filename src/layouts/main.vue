@@ -1,4 +1,5 @@
 <template lang="pug">
+//- 1 2 3 2
 div.MainLayout
   NavBar
   div.content-wrapper
@@ -15,6 +16,7 @@ div.MainLayout
   flex-direction: column
   height: 100%
   padding: 4rem 1rem 1rem
+  position: relative
   width: 100%
 
   .NavBar

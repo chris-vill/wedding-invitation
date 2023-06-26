@@ -7,12 +7,13 @@ div.HomePage
   div.when
     span Sat
     span Sep 9, 2023
-    span 3pm
+    span 2:30pm
   div.where
     span Our Lady of Lourdes Parish, Tagaytay City
   div.deadline
-    span RSVP on or before
-    span July 9
+    span.inline-bold RSVP
+    span on or before
+    span.inline-bold August 9, 2023
 </template>
 
 <script lang="ts" setup>
@@ -31,35 +32,35 @@ definePageMeta({
     color: $purple-dark-20
     display: flex
     flex-direction: column
-    margin-bottom: rem(54)
+    margin-bottom: rem(64)
 
   .when
     +sensa-wild-fill(28)
-    color: $dark
+    color: $purple
     display: flex
     gap: rem(30)
     justify-content: center
     margin-bottom: rem(24)
 
   .where
-    +sensa-wild-fill(20)
+    +sensa-wild-fill(18)
     display: flex
-    color: $dark
+    color: $purple
     justify-content: center
-    margin-bottom: rem(24)
+    margin-bottom: rem(64)
 
   .deadline
     align-items: center
-    color: $dark
+    color: $purple
     display: flex
-    flex-direction: column
     gap: rem(12)
+    justify-content: center
 
-    span:first-child
-      +sensa-wild-fill(18)
+    span:not(.inline-bold)
+      +sensa-wild-fill(16)
 
-    span:last-child
-      +sensa-wild-fill(20)
+    .inline-bold
+      +sensa-wild-fill(24)
 </style>
 
 <!-- 3:30pm -->
