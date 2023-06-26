@@ -9,7 +9,7 @@ div.MainLayout
 <script setup></script>
 
 <style lang="sass" scoped>
-@use "~styles/abstracts" as *
+@use "@/styles/abstracts" as *
 
 .MainLayout
   display: flex

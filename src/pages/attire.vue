@@ -1,11 +1,11 @@
 <template lang="pug">
 div.AttirePage
   div.dress-code
-    img(src="~assets/images/dress_code.png")
+    img(src="@/assets/images/dress_code.png")
     span Casual, Semi-formal
 
   div.color-palette
-    img(src="~assets/images/color_palette.png")
+    img(src="@/assets/images/color_palette.png")
     span Shade of Purple/Violet or Gray
 </template>
 
@@ -16,7 +16,7 @@ definePageMeta({
 </script>
 
 <style lang="sass" scoped>
-@use "~styles/abstracts" as *
+@use "@/styles/abstracts" as *
 
 .AttirePage
   align-items: center
