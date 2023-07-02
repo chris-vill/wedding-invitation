@@ -1,10 +1,7 @@
 <template lang="pug">
-//- 1 2 3 2
 div.MainLayout
   img.corner-image(src="/images/flowers-2.png")
-  //- img.corner-image(src="/images/flowers-2.png")
   img.corner-image(src="/images/flowers-3.png")
-  //- img.corner-image(src="/images/flowers-2.png")
   NavBar
   div.content-wrapper
     slot
