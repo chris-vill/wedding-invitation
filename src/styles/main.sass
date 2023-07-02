@@ -1,14 +1,35 @@
 @use "./base/font-face"
   
 html
-  height: 100%
-  width: 100%
+  overflow: hidden
 
 body
-  height: 100%
-  width: 100%
+  overflow: hidden
 
 #__nuxt
-  background: url("/images/background.png"), lightgray 50% / cover no-repeat
-  height: 100%
-  width: 100%
+  animation-name: clouds-movement
+  animation-duration: 166.26s
+  background-image: url("/images/background.png")
+  overflow: hidden
+  position: absolute
+  top: 0
+  bottom: 0
+  right: 0
+  left: 0
+
+@keyframes clouds-movement
+  0%
+    background-position: 0 0
+
+  32.5%
+    background-position: -1620px 0
+    
+  50%
+    background-position: -1620px -874px
+
+  82.5%
+    background-position: 0 -874px
+
+  100%
+    background-position: 0 0
+    

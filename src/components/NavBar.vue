@@ -17,6 +17,10 @@ const navItems = [
     route: "/",
   },
   {
+    label: "Message",
+    route: "/message",
+  },
+  {
     label: "Attire",
     route: "/attire",
   },
@@ -31,6 +35,10 @@ const navItems = [
   {
     label: "Gallery",
     route: "/gallery",
+  },
+  {
+    label: "FAQs",
+    route: "/faq",
   },
   {
     label: "RSVP",

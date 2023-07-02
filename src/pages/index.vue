@@ -27,27 +27,26 @@ definePageMeta({
 
 .HomePage
   .couple
+    +fx-col
+    +m-y(rem(64))
     +playlist-script(56)
     align-items: center
     color: $purple-dark-20
-    display: flex
-    flex-direction: column
-    margin-bottom: rem(64)
 
   .when
+    +fx
+    +m-b(rem(24))
     +sensa-wild-fill(28)
     color: $purple
-    display: flex
     gap: rem(30)
     justify-content: center
-    margin-bottom: rem(24)
 
   .where
+    +m-b(rem(24))
     +sensa-wild-fill(18)
     display: flex
     color: $purple
     justify-content: center
-    margin-bottom: rem(64)
 
   .deadline
     align-items: center

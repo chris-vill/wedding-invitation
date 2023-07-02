@@ -1,12 +1,16 @@
 <template lang="pug">
 //- 1 2 3 2
 div.MainLayout
+  img.corner-image(src="/images/flowers-2.png")
+  //- img.corner-image(src="/images/flowers-2.png")
+  img.corner-image(src="/images/flowers-3.png")
+  //- img.corner-image(src="/images/flowers-2.png")
   NavBar
   div.content-wrapper
     slot
 </template>
 
-<script setup></script>
+<script setup lang="ts"></script>
 
 <style lang="sass" scoped>
 @use "@/styles/abstracts" as *
@@ -19,14 +23,30 @@ div.MainLayout
   position: relative
   width: 100%
 
+  .content-wrapper
+    overflow: scroll
+
+  .corner-image
+    +pos-abs
+    opacity: 0.6
+
+    &:first-of-type
+      +w(rem(186))
+      bottom: -27px
+      left: 24px
+      transform: rotateY(180deg) rotate(270deg)
+
+    &:nth-of-type(2)
+      +w(rem(229))
+      transform: rotate(270deg)
+      bottom: -18px
+      right: -14px
+
   .NavBar
     justify-content: center
     margin: 0 auto
     width: 100%
-
-  .content-wrapper
-    margin: auto
-    overflow-y: scroll
+    z-index: 2
 
 +media((tablet, desktop))
   .MainLayout
