@@ -32,14 +32,14 @@ div.MainLayout
 
     &:first-of-type
       +w(rem(186))
-      bottom: -27px
+      bottom: -48px
       left: 24px
       transform: rotateY(180deg) rotate(270deg)
 
     &:nth-of-type(2)
       +w(rem(229))
       transform: rotate(270deg)
-      bottom: -18px
+      bottom: -39px
       right: -14px
 
   .NavBar
