@@ -23,7 +23,7 @@ definePageMeta({
 
 .AttirePage
   +m-t(rem(24))
-  +m-x(rem(8))
+  +m-x(rem(16))
   align-items: center
   display: flex
   flex-direction: column
@@ -37,13 +37,14 @@ definePageMeta({
     gap: 1.5rem
 
     &:first-child img
-      +w(14rem)
+      +w(rem(180))
 
     &:last-child img
-      +w(10rem)
+      +w(rem(180))
 
   .dress-code div
     +fx-col
+    gap: rem(8)
 
   span
     +sensa-wild-fill(20)
