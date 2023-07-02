@@ -1,7 +1,6 @@
 <template lang="pug">
 div.GalleryPage
-  Icon(name="screwdriver-wrench")
-  span Underconstruction
+  span this section is Under Construction
 </template>
 
 <script lang="ts" setup>
@@ -18,15 +17,6 @@ definePageMeta({
   display: flex
   flex-direction: column
   gap: rem(32)
-
-  :deep(.Icon)
-    height: rem(64)
-    width: rem(64)
-
-    path
-      height: rem(64)
-      width: rem(64)
-      fill: $purple-dark-20
 
   span
     +sensa-wild-fill(28)
