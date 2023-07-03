@@ -22,6 +22,7 @@ definePageMeta({
 
 .Message
   +m-t(rem(24))
+  +m-x(rem(26))
 
   h2
     +m-b(rem(24))
@@ -31,7 +32,7 @@ definePageMeta({
 
   p
     +m-b(rem(20))
-    +sensa-wild-fill(20)
+    +great-vibes(24)
     color: $purple-dark-20
     text-indent: rem(16)
 </style>
