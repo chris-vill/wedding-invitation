@@ -26,13 +26,14 @@ definePageMeta({
 
   h2
     +m-b(rem(24))
-    +sensa-wild-fill(32)
+    // +sensa-wild-fill(32)
+    +dancing-script-bold(32)
     color: $purple-dark-20
     text-align: center
 
   p
     +m-b(rem(20))
-    +great-vibes(24)
+    +dancing-script-bold(24)
     color: $purple-dark-20
     text-indent: rem(16)
 </style>
