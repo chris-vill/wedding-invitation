@@ -57,10 +57,14 @@ const navItems = [
 
   nav
     display: flex
-    overflow: scroll
+    overflow-x: scroll
 
-  :deep(.Icon path)
-    fill: $purple
+  :deep(.Icon)
+    height: rem(24)
+    width: rem(24)
+
+    path
+      fill: $purple
 
   +media((desktop))
     :deep(.Icon)

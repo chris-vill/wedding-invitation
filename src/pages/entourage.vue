@@ -27,28 +27,32 @@ div.EntouragePage
 
   section
     div
-      h2 BEARERS
-      span Zane Cullen Abella
-      span Zachary Drake Vea
-      span Zohan Damien Vea
-      h2 MALE SPONSORS
-      span Frederich Malabanan
-      span Jose Dioquino
-      span Jerson Andes
-      span Joey Andes
-      span Resty Reyes
+      div
+        h2 BEARERS
+        span Zane Cullen Abella
+        span Zachary Drake Vea
+        span Zohan Damien Vea
+      div
+        h2 FLOWER GIRLS
+        span Margaux Sambajon
+        span Mavis Riley Villaran
+        span Millie Kassidy Anglo
 
     div
-      h2 FLOWER GIRLS
-      span Margaux Sambajon
-      span Mavis Riley Villaran
-      span Millie Kassidy Anglo
-      h2 FEMALE SPONSORS
-      span Maria Nonica Bersola
-      span Arliza Villarosa
-      span Gemma Ajero
-      span Rachelle Malabanan
-      span Lea Cagabhion
+      div
+        h2 MALE SPONSORS
+        span Frederich Malabanan
+        span Jose Dioquino
+        span Jerson Andes
+        span Joey Andes
+        span Resty Reyes
+      div
+        h2 FEMALE SPONSORS
+        span Maria Nonica Bersola
+        span Arliza Villarosa
+        span Gemma Ajero
+        span Rachelle Malabanan
+        span Lea Cagabhion
 </template>
 
 <script lang="ts" setup>
@@ -62,21 +66,34 @@ definePageMeta({
 
 .EntouragePage
   +p-y(rem(32), rem(16))
-  display: flex
-  flex-direction: column
+  +fx-col
   gap: rem(32)
 
-  section
-    display: flex
+  section:first-child
+    +fx
     flex-wrap: wrap
     gap: rem(32)
     justify-content: center
 
     & > div
+      +fx-col
       align-items: center
-      display: flex
-      flex-direction: column
       min-width: rem(300)
+
+  section:last-child
+    +fx-col
+    gap: rem(32)
+
+    & > div
+      +fx
+      justify-content: center
+      gap: rem(32)
+      flex-wrap: wrap
+
+      & > div
+        +fx-col
+        align-items: center
+        min-width: rem(300)
 
   h2
     +sensa-wild-fill(28)

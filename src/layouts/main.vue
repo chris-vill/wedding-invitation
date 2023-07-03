@@ -16,12 +16,14 @@ div.MainLayout
   display: flex
   flex-direction: column
   height: 100%
-  padding: 2.5rem 1rem
+  padding: 2.5rem 1.5rem
   position: relative
   width: 100%
 
   .content-wrapper
     overflow: scroll
+    height: 100%
+    width: 100%
 
   .corner-image
     +pos-abs
@@ -29,14 +31,14 @@ div.MainLayout
 
     &:first-of-type
       +w(rem(186))
-      bottom: -48px
+      bottom: -72px
       left: 24px
       transform: rotateY(180deg) rotate(270deg)
 
     &:nth-of-type(2)
       +w(rem(229))
       transform: rotate(270deg)
-      bottom: -39px
+      bottom: -62px
       right: -14px
 
   .NavBar

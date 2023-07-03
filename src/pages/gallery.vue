@@ -17,6 +17,9 @@ definePageMeta({
   display: flex
   flex-direction: column
   gap: rem(32)
+  height: 100%
+  width: 100%
+  justify-content: center
 
   span
     +sensa-wild-fill(28)
