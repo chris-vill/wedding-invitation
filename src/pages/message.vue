@@ -32,7 +32,7 @@ definePageMeta({
 
   p
     +m-b(rem(20))
-    +dancing-script-bold(24)
+    +dancing-script(24)
     color: $purple-dark-20
     text-indent: rem(16)
     text-align: center
