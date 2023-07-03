@@ -1,7 +1,7 @@
 <template lang="pug">
 div.AttirePage
   div.dress-code
-    img(src="/images/dress_code.png")
+    img.illustration(src="/images/dress_code.png")
     div
       span Casual, Semi-formal
       span Strictly: No slippers or flip-flops, tank tops
@@ -9,7 +9,9 @@ div.AttirePage
 
   div.color-palette
     span We request our guests to be in any of these colors on our special day (refer to the palette on the right)
-    img(src="/images/color_palette.png")
+    img.illustration(src="/images/color_palette.png")
+
+  img.logo(src="/images/logo.png")
 </template>
 
 <script lang="ts" setup>
@@ -22,12 +24,10 @@ definePageMeta({
 @use "@/styles/abstracts" as *
 
 .AttirePage
-  +m-t(rem(24))
-  +m-x(rem(16))
   align-items: center
   display: flex
   flex-direction: column
-  gap: 3rem
+  gap: 2.5rem
   position: relative
   z-index: 2
 
@@ -36,18 +36,20 @@ definePageMeta({
     align-items: center
     gap: 1.5rem
 
-    &:first-child img
-      +w(rem(180))
-
-    &:last-child img
-      +w(rem(180))
+  .illustration
+    +w(8.5rem)
 
   .dress-code div
     +fx-col
     gap: rem(8)
 
   span
-    +sensa-wild-fill(20)
+    +sensa-wild-fill-bold(20)
     line-height: 140%
     color: $purple
+    text-align: center
+
+  .logo
+    width: rem(100)
+    margin: 0 auto
 </style>

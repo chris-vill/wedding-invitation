@@ -21,6 +21,8 @@ div.MainLayout
   width: 100%
 
   .content-wrapper
+    +p-x(rem(26))
+    +p-t(rem(40))
     overflow: scroll
     height: 100%
     width: 100%

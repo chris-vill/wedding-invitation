@@ -28,7 +28,7 @@ definePageMeta({
 .HomePage
   .couple
     +fx-col
-    +m-y(rem(48))
+    +m-b(rem(48))
     +playlist-script(56)
     align-items: center
     color: $purple-dark-20

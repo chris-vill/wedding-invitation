@@ -9,6 +9,8 @@ div.Message
     | Have a look around to learn more about our wedding day plans and most importantly, don't forget to RSVP!
   p
     | And finally, we would like to thank you in advance for your love and support for us. We are very much looking forward to celebrate this special day with you.
+
+  img(src="/images/logo.png")
 </template>
 
 <script setup lang="ts">
@@ -21,19 +23,24 @@ definePageMeta({
 @use "@/styles/abstracts" as *
 
 .Message
-  +m-t(rem(24))
-  +m-x(rem(26))
+  +p-b(rem(36))
+  +m-x(auto)
+  max-width: (rem(480))
 
   h2
-    +m-b(rem(24))
+    +m-b(rem(32))
     +sensa-wild-fill(32)
     color: $purple-dark-20
     text-align: center
 
   p
-    +m-b(rem(20))
+    +m-b(rem(24))
     +dancing-script(24)
     color: $purple-dark-20
     text-indent: rem(16)
     text-align: center
+
+  img
+    width: rem(100)
+    margin: 0 auto
 </style>
