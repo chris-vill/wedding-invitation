@@ -33,4 +33,5 @@ function onInputChange(event: Event) {
     border: 2px solid $dark
     border-radius: rem(8)
     padding: rem(16)
+    width: 100%
 </style>

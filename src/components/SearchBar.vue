@@ -1,9 +1,10 @@
 <template lang="pug">
 div.SearchBar
   div
-    input(placeholder="Search your full name" @input="onSearch" @click="onSearchBarClick" :value="query" autocomplete="no")
-    ul(v-if="!isResultItemSelected && filteredList.length").search-result
+    input(placeholder="Search your full name" @input="onSearch" @click="onSearchBarClick" :value="query || ''" autocomplete="no")
+    ul(v-if="hasSearched").search-result
       li(v-for="guest in filteredList" @click="onResultItemClick") {{ guest.fullname }}
+      li(v-if="isQueryEmpty") Sorry, you're not on the list 😔
 </template>
 
 <script setup lang="ts">
@@ -12,6 +13,8 @@ import * as T from "@/core/types";
 const query = ref("");
 const filteredList = ref<T.Guest[]>([]);
 const isResultItemSelected = ref(false);
+const isQueryEmpty = ref(false);
+const hasSearched = ref(false);
 
 const props = defineProps({
   name: {
@@ -38,15 +41,20 @@ function onSearch(event: Event) {
     return;
   }
 
+  hasSearched.value = true;
+
   filteredList.value = (props.searchList as T.Guest[]).filter((guest) => {
     const lowerCaseFullname = guest.fullname.toLocaleLowerCase();
     const lowerCaseQuery = query.value.toLocaleLowerCase();
 
     return lowerCaseFullname.includes(lowerCaseQuery);
   });
+
+  isQueryEmpty.value = !filteredList.value.length;
 }
 
 function onSearchBarClick() {
+  isQueryEmpty.value = false;
   isResultItemSelected.value = false;
   filteredList.value = [];
 }
@@ -54,16 +62,13 @@ function onSearchBarClick() {
 function onResultItemClick(event: Event) {
   const resultItemEl = event.target as HTMLLIElement;
 
+  hasSearched.value = false;
   isResultItemSelected.value = true;
   query.value = resultItemEl.textContent as string;
   emit("input-update", {
     [props.name]: query.value,
   });
 }
-
-// console.log(filteredList.value);
-// console.log(query);
-// console.log(isResultItemSelected);
 </script>
 
 <style lang="sass" scoped>
@@ -83,6 +88,7 @@ function onResultItemClick(event: Event) {
 
     &:focus
       border-color: $purple-light-20 !important
+      outline: none
 
   ul
     +sensa-wild-fill(16)

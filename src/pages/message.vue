@@ -26,7 +26,7 @@ definePageMeta({
 
   h1
     +m-b(rem(32))
-    +sensa-wild-fill(32)
+    +playlist-script(38)
     color: $purple
     text-align: center
 

@@ -6,9 +6,12 @@ div.MainLayout
   div.content-wrapper
     slot
     img.logo(src="/images/logo.png")
+audio(autoplay loop src="/audio/wedding-themed-music.mp3" controls)
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+document.querySelector("audio")?.play();
+</script>
 
 <style lang="sass" scoped>
 @use "@/styles/abstracts" as *
@@ -23,7 +26,7 @@ div.MainLayout
   width: 100%
 
   .content-wrapper
-    // +p-x(rem(18))
+    +fx-col
     +p-y(rem(40))
     overflow: scroll
     height: 100%
@@ -52,9 +55,10 @@ div.MainLayout
     z-index: 2
 
   .logo
-    +m-t(rem(40))
+    +m-t(auto)
     +m-x(auto)
-    width: rem(100)
+    +p-t(rem(40))
+    width: rem(160)
 
 +media((tablet, desktop))
   .MainLayout

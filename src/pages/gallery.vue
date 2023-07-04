@@ -20,7 +20,8 @@ definePageMeta({
   height: 100%
   width: 100%
   justify-content: center
+  text-align: center
 
-  span
+  & > span
     +sensa-wild-fill(28)
 </style>

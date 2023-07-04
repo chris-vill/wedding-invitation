@@ -29,7 +29,8 @@ export default defineEventHandler(async (event) => {
 const guestPropertyMap = {
   id: (value: string) => (value ? +value : -1),
   fullname: (value: string) => value,
-  isGoing: (value: string) => value === "TRUE",
+  isGoing: (value: string) =>
+    value === "TRUE" ? true : value === "FALSE" ? false : null,
   mobileNumber: (value: string) => value,
   emailAddress: (value: string) => value,
   tableNumber: (value: string) => +value,
