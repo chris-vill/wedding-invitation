@@ -5,6 +5,7 @@ div.MainLayout
   NavBar
   div.content-wrapper
     slot
+    img.logo(src="/images/logo.png")
 </template>
 
 <script setup lang="ts"></script>
@@ -21,8 +22,8 @@ div.MainLayout
   width: 100%
 
   .content-wrapper
-    +p-x(rem(26))
-    +p-t(rem(40))
+    +p-x(rem(18))
+    +p-y(rem(40))
     overflow: scroll
     height: 100%
     width: 100%
@@ -48,6 +49,11 @@ div.MainLayout
     margin: 0 auto
     width: 100%
     z-index: 2
+
+  .logo
+    +m-t(rem(40))
+    +m-x(auto)
+    width: rem(100)
 
 +media((tablet, desktop))
   .MainLayout

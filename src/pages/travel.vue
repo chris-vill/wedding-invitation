@@ -20,8 +20,6 @@ definePageMeta({
 @use "@/styles/abstracts" as *
 
 .TravelPage
-  padding-top: rem(48)
-
   h3
     +sensa-wild-fill(22)
     color: $purple-dark-20

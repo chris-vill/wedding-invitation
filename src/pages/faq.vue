@@ -2,7 +2,7 @@
 div.FAQ
   header
     h1 Wedding FAQs
-    span We have prepared answers to some questions that you might have for our big day
+    p We have prepared answers to some questions that you might have for our big day! 😊
 
   div.item
     h5 Q: Where will the ceremony be?
@@ -70,6 +70,16 @@ div.FAQ
       | and we plan to keep it solemn. Please put down and keep your phones during the processional and ceremony. After we are pronounced husband and wife, you're free to take shots 😊
     span We have an amazing team of photographers and videographers to capture the moment. We promise to share the pictures with you after the wedding!
 
+  div.item
+    h5 Q: How can we help the couple have the best time during the wedding?
+    span Pray with us for favors and provisions
+    span RSVP now 😊
+    span Wear appropriate attire
+    span Be there on time
+    span Stay until the end of the program
+    span Enjoy! 😊
+
+  img.logo(src="/images/logo.png")
 </template>
 
 <script setup lang="ts">
@@ -84,7 +94,6 @@ definePageMeta({
 .FAQ
   +fx-col
   +sensa-wild-fill(20)
-  +m-t(rem(28))
   +m-b(rem(64))
   color: $dark
   gap: rem(24)
@@ -92,11 +101,17 @@ definePageMeta({
   header
     +m-b(rem(12))
 
+    p
+      text-align: center
+
   h1
     +sensa-wild-fill(28)
     +m-b(rem(18))
     color: $purple-dark-40
     text-align: center
+
+  h5
+    color: $purple
 
   .item
     +fx-col
@@ -104,4 +119,8 @@ definePageMeta({
 
   .highlight
     color: $purple-light-20
+
+  .logo
+    width: rem(100)
+    margin: 0 auto
 </style>

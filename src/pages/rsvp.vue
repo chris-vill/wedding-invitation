@@ -1,5 +1,9 @@
 <template lang="pug">
 div.RSVP
+  div.message
+    h1 RSVP
+    p The favor of your reply is greatly appreciated on or before August 9, 2023
+
   div.rsvp-flow(v-if="!isRsvpJustSent")
     SearchBar(name="fullname" :search-list="guestList" @input-update="onFieldsUpdate")
     div.form(v-if="!isRsvpAlreadySent && guestData.fullname" )
