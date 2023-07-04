@@ -6,7 +6,7 @@ div.MainLayout
   div.content-wrapper
     slot
     img.logo(src="/images/logo.png")
-audio(autoplay loop src="/audio/wedding-themed-music.mp3" controls)
+audio(autoplay loop src="/audio/wedding-themed-music.mp3")
 </template>
 
 <script setup lang="ts">
