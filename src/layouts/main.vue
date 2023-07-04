@@ -14,6 +14,7 @@ div.MainLayout
 @use "@/styles/abstracts" as *
 
 .MainLayout
+  +p-x(rem(40), rem(18))
   display: flex
   flex-direction: column
   height: 100%
@@ -22,7 +23,7 @@ div.MainLayout
   width: 100%
 
   .content-wrapper
-    +p-x(rem(18))
+    // +p-x(rem(18))
     +p-y(rem(40))
     overflow: scroll
     height: 100%

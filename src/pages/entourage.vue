@@ -22,7 +22,7 @@ div.EntouragePage
         span Mrs. Eden Anglo
         span Mrs. Arliza Villarosa
 
-  section.col-2
+  section.best-honor
     div
       h2 BEST MAN
       span Mark Jeanbert Nabong
@@ -32,8 +32,7 @@ div.EntouragePage
       span Melanie Sambajon
 
   section.blessings
-    header
-      h2 Bearer of Blessings
+    h2 Bearer of Blessings
     div.col-3
       div
         h3 To Light Our Path
@@ -48,7 +47,7 @@ div.EntouragePage
         span Charles Klient Anglo
         span Mikee Ann Anglo
 
-  section.col-2
+  section.companion
     div
       h2 GROOMS MEN
       span Kelvin Bersola
@@ -64,27 +63,26 @@ div.EntouragePage
       span Marjorie Andes
 
   section.kids
-    div
-      h2
-        | To Carry Our Symbols Of Love
-        br
-        | & To Sweeten Our Journey
+    h2
+      | To Carry Our Symbols Of Love
+      br
+      | & To Sweeten Our Journey
 
-      div.col-3
-        div
-          h3 Bearer of Coins
-          span Zachary Drake Vea
-        div
-          h3 Bearer of Rings
-          span Zohan Damien Vea
-        div
-          h3 Bearer of the Bible
-          span Zane Cullen Abella
+    div.col-3
       div
-        h3 FLOWER GIRLS
-        span Margaux Sambajon
-        span Mavis Riley Villaran
-        span Millie Kassidy Anglo
+        h3 Bearer of Coins
+        span Zachary Drake Vea
+      div
+        h3 Bearer of Rings
+        span Zohan Damien Vea
+      div
+        h3 Bearer of the Bible
+        span Zane Cullen Abella
+    div.col-1
+      h3 FLOWER GIRLS
+      span Margaux Sambajon
+      span Mavis Riley Villaran
+      span Millie Kassidy Anglo
 </template>
 
 <script lang="ts" setup>
@@ -102,57 +100,105 @@ definePageMeta({
   align-items: center
 
   h1
-    +sensa-wild-fill(32)
+    +playlist-script(38)
     color: $purple
 
   h2
     +sensa-wild-fill(24)
-    +m-b(rem(16))
     color: $purple-dark-20
 
   h3
     +sensa-wild-fill(18)
-    +m-b(rem(12))
     color: $purple-dark-20
 
-  header
-    +m-b(rem(18))
-    text-align: center
-
-  .blessings h2
-    text-align: center
-
-  .kids
-    h2
-      text-align: center
-
-    div:last-child
-      text-align: center
-
-    .col-3
-      +m-b(rem(16))
-
-  .col-2
-    +fx
-    gap: rem(32)
-
-    div:first-child
-      text-align: right
-
-  .col-3
-    +fx
-    gap: rem(8)
-    text-align: center
-
   span
-    +playlist-script(18)
+    +playlist-script(20)
     color: $purple-dark-40
     display: block
 
     &:not(:last-child)
       +m-b(rem(8))
 
-  +media((tablet, desktop))
+  header
+    text-align: center
+
+  section
+    width: 100%
+
+  .guidance
+    header
+      +m-b(rem(14))
+
+    h2
+      +m-b(rem(8))
+      text-align: center
+
+    .col-2
+      +fx
+      gap: rem(24)
+
+      div
+        flex-basis: 100%
+
+      div:first-child
+        text-align: right
+
+  .best-honor, .companion
+    +fx
+    gap: rem(24)
+
+    h2
+      +m-b(rem(14))
+
+    div
+      flex-basis: 100%
+
+    div:first-child
+      text-align: right
+
+  .blessings
+    h2, h3, span
+      text-align: center
+
+    h2
+      +m-b(rem(20))
+
+    h3
+      +m-b(rem(8))
+
     .col-3
-      gap: rem(36)
+      +fx-col
+      gap: rem(20)
+
+      div
+        flex-basis: 100%
+
+  .kids
+    h2
+      text-align: center
+      +m-b(rem(20))
+
+    h3
+      +m-b(rem(8))
+
+    div
+      text-align: center
+
+    .col-3
+      +fx-col
+      +m-b(rem(20))
+      gap: rem(20)
+
+      div
+        flex-basis: 100%
+
+  +media((tablet, desktop))
+    .kids, .blessings
+      .col-3
+        +fx-dir-row
+        gap: rem(36)
+        justify-content: center
+
+        div
+          max-width: rem(180)
 </style>
