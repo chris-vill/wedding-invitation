@@ -10,7 +10,7 @@ audio(autoplay loop src="/audio/wedding-themed-music.mp3")
 </template>
 
 <script setup lang="ts">
-document.querySelector("audio")?.play();
+document?.querySelector("audio")?.play();
 </script>
 
 <style lang="sass" scoped>
