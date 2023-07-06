@@ -1,27 +1,42 @@
 <template lang="pug">
-div.MainLayout
+div.MainLayout(ref="mainRef")
   img.corner-image(src="/images/flowers-2.png")
   img.corner-image(src="/images/flowers-3.png")
   NavBar
   div.content-wrapper
     slot
     img.logo(src="/images/logo.png")
-audio(autoplay loop src="/audio/wedding-themed-music.mp3")
+//- audio(ref="audioRef" autoplay loop src="/audio/wedding-themed-music.mp3" controls)
 </template>
 
 <script setup lang="ts">
-document?.querySelector("audio")?.play();
+const mainRef = ref(null);
+
+onMounted(() => {
+  const mainEl = mainRef.value;
+  const audio = document?.createElement("audio");
+  audio.src = "/audio/wedding-themed-music.mp3";
+  audio.autoplay = true;
+  audio.loop = true;
+  audio.controls = false;
+
+  if (!mainEl) {
+    return;
+  }
+
+  (mainEl as HTMLDivElement).appendChild(audio);
+  audio.play();
+});
 </script>
 
 <style lang="sass" scoped>
 @use "@/styles/abstracts" as *
 
 .MainLayout
-  +p-x(rem(40), rem(18))
   display: flex
   flex-direction: column
   height: 100%
-  padding: 2.5rem 1.5rem
+  padding: rem(18) rem(18) rem(40)
   position: relative
   width: 100%
 
