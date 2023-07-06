@@ -78,8 +78,6 @@ div.FAQ
     span Be there on time
     span Stay until the end of the program
     span Enjoy! 😊
-
-  img.logo(src="/images/logo.png")
 </template>
 
 <script setup lang="ts">
@@ -119,8 +117,4 @@ definePageMeta({
 
   .highlight
     color: $purple-light-20
-
-  .logo
-    width: rem(100)
-    margin: 0 auto
 </style>
