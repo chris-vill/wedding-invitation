@@ -4,7 +4,7 @@ div.TravelPage
     h1 Travel
   
   div.mobile
-    a(href="https://www.waze.com/live-map/directions?to=place.w.79298701.792724867.1431116")
+    a(href="https://www.waze.com/live-map/directions?to=place.w.79298701.792724867.1431116") Go To Church
   
   h3 Own a car? scan the QR codes below
   div.qr-container
@@ -40,6 +40,11 @@ definePageMeta({
     color: $purple-dark-20
     text-align: center
     margin-bottom: rem(38)
+
+  // .mobile
+  //   a
+  //     height: 32px
+  //     width: 82px
 
   .qr-container
     align-items: center
