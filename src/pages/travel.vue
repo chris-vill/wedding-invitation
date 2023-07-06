@@ -4,7 +4,8 @@ div.TravelPage
     h1 Travel
   
   div.mobile
-    a(href="https://www.waze.com/live-map/directions?to=place.w.79298701.792724867.1431116") Go To Church
+    //- a(href="https://www.waze.com/live-map/directions?to=place.w.79298701.792724867.1431116") Go To Church
+    a(href="https://www.waze.com/ul?ll=place.w.79298701.792724867.1431116") Go To Church
   
   h3 Own a car? scan the QR codes below
   div.qr-container
