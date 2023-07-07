@@ -37,10 +37,11 @@ const navItems = [
     label: "Entourage",
     route: "/entourage",
   },
-  {
-    label: "Gallery",
-    route: "/gallery",
-  },
+  // TODO: develop when we have pictures
+  // {
+  //   label: "Gallery",
+  //   route: "/gallery",
+  // },
   {
     label: "FAQs",
     route: "/faq",

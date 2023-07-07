@@ -1,5 +1,7 @@
 <template lang="pug">
 div.Message
+  img(src="/images/prenup_1.png")
+
   h1 A Message For You
   p
     | We're getting married on 9th of September 2023 and we'd be most grateful for your presence in joining us in our matrimonial celebration!
@@ -25,7 +27,7 @@ definePageMeta({
   max-width: (rem(480))
 
   h1
-    +m-b(rem(32))
+    +m-y(rem(24), rem(32))
     +playlist-script(38)
     color: $purple
     text-align: center
