@@ -2,17 +2,25 @@
 div.TravelPage
   header
     h1 Travel
+    img(src="/images/prenup_2.png")
   
-  div.mobile
-    a(href="https://ul.waze.com/ul?preview_venue_id=79298701.792724867.1431116&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location") Go To Church
-    a(href="https://ul.waze.com/ul?preview_venue_id=79298701.792724868.10452740&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location") Go To Reception
+  .location-container
+    .location.lourdes
+      img(src="/images/lourdes.jpg")
+      span Our Lady of Lourdes, Tagaytay
+      a(href="https://ul.waze.com/ul?preview_venue_id=79298701.792724867.1431116&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location") Go To Church
     
-  h3 Own a car? scan the QR codes below
-  div.qr-container
-    div.qr-code
+    .location.aquila
+      img(src="/images/aquila.jpg")
+      span Aquila Crystal Palace, Tagaytay
+      a(href="https://ul.waze.com/ul?preview_venue_id=79298701.792724868.10452740&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location") Go To Reception
+    
+  //- h3 Own a car? scan the QR codes below
+  .qr-container
+    .qr-code
       img(src="/images/our-lady-of-lourdes-qr.png")
       span Our Lady of Lourdes, Tagaytay
-    div.qr-code
+    .qr-code
       img(src="/images/aquila-crystal-palace-qr.png")
       span Aquila Crystal Palace, Tagaytay
 </template>
@@ -29,29 +37,72 @@ definePageMeta({
 .TravelPage
   header
     text-align: center
-    +m-b(rem(32))
+    +m-b(rem(48))
 
     h1
       +playlist-script(38)
+      +m-b(rem(24))
       color: $purple
+
+    img
+      margin: 0 auto
+      filter: drop-shadow(0 0 10px rgba($dark, 0.5))
+
+      +media(mobile)
+        max-width: rem(320)
+
+      +media((tablet, desktop))
+        max-width: rem(480)
 
   h3
     +sensa-wild-fill(22)
     display: none
     color: $purple-dark-20
     text-align: center
-    margin-bottom: rem(38)
+    margin-bottom: rem(48)
 
-  // .mobile
-  //   a
-  //     height: 32px
-  //     width: 82px
+  .location-container
+    +fx
+    justify-content: center
+    flex-wrap: wrap
+    gap: rem(68)
+
+  .location
+    +fx-col
+    align-items: center
+    gap: rem(16)
+
+    *
+      display: block
+
+    img
+      border-radius: rem(16)
+      box-shadow: 0 0 10px rgba($dark, 0.5)
+
+    span
+      +playlist-script(24)
+      color: $purple-dark-20
+
+    a
+      border-radius: rem(8)
+      background-color: $purple-light-20
+      padding: rem(8) rem(16)
+      color: $light
+
+      &:visited
+        color: $light
+
+  .lourdes img
+    max-width: rem(320)
+
+  .aquila img
+    max-height: rem(295)
 
   .qr-container
     align-items: center
     display: none
     flex-wrap: wrap
-    gap: rem(48)
+    gap: rem(96)
     justify-content: center
 
   .qr-code
@@ -66,11 +117,15 @@ definePageMeta({
       height: rem(256)
       width: rem(256)
 
-  +media((tablet, desktop))
+  +media((mobile, tablet))
+    .aquila img
+      max-width: rem(320)
+
+  +media(desktop)
     h3
       display: block
 
-    .mobile
+    .location-container
       display: none
 
     .qr-container

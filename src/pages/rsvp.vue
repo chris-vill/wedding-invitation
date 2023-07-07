@@ -2,6 +2,7 @@
 div.RSVP
   header
     h1 RSVP
+    img(src="/images/prenup_4.png")
     p The favor of your reply is greatly appreciated on or before August 9, 2023
 
   div.rsvp-flow(v-if="!isRsvpJustSent")
@@ -114,10 +115,21 @@ function onSlideToggle(event: Event) {
 
 .RSVP
   +fx-col
-  height: 100%
 
   header
     text-align: center
+    +m-b(rem(48))
+
+    img
+      margin: 0 auto
+      filter: drop-shadow(0 0 10px rgba($dark, 0.5))
+      +m-b(rem(16))
+
+      +media(mobile)
+        max-width: rem(320)
+
+      +media((tablet, desktop))
+        max-width: rem(480)
 
   h1
     +playlist-script(38)

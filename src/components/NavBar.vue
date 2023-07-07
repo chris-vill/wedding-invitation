@@ -87,6 +87,7 @@ function setPips() {
     display: flex
     gap: 0.5rem
     width: 100%
+    justify-content: center
 
     nav
       display: flex

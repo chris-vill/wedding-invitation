@@ -2,6 +2,7 @@
 div.FAQ
   header
     h1 Wedding FAQs
+    img(src="/images/prenup_6.png")
     p We have prepared answers to some questions that you might have for our big day! 😊
 
   div.item
@@ -99,6 +100,17 @@ definePageMeta({
   header
     +m-b(rem(12))
 
+    img
+      +m-b(rem(48))
+      +m-x(auto)
+      display: block
+
+      +media(mobile)
+        max-width: rem(320)
+
+      +media((tablet, desktop))
+        max-width: rem(480)
+
     p
       text-align: center
 
@@ -113,8 +125,14 @@ definePageMeta({
 
   .item
     +fx-col
+    +m-x(auto)
     gap: rem(8)
+    max-width: rem(520)
 
   .highlight
     color: $purple-light-20
+
+  +media((tablet, desktop))
+    .item
+      min-width: rem(520)
 </style>

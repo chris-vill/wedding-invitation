@@ -2,6 +2,7 @@
 div.AttirePage
   header
     h1 Attire
+    img(src="/images/prenup_5.png")
     span We hope our wedding will be a fun excuse for you to dress up! 😉
 
   div.instruction.dress-code
@@ -34,11 +35,12 @@ definePageMeta({
   z-index: 2
 
   header
+    +fx-col
     text-align: center
+    gap: rem(18)
 
     h1
       +playlist-script(38)
-      +m-b(rem(16))
       color: $purple
 
     span
