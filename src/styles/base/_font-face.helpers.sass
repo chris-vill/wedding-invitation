@@ -1,24 +1,15 @@
+@function file-format($string)
+  $index: str-index($string, ".")
+  $extension: str-slice($string, $index + 1)
+  
+  @if $extension == "otf"
+    @return format("opentype")
+  @else
+    @return format($extension)
+  
 =font-face($name, $style, $weight, $filename)
   @font-face
     font-family: $name
-    // font-family: unquote($name)
     font-weight: $weight
     font-style: $style
-    
-    @if $name == "Montserrat"
-      src: url("/fonts/Montserrat/" + $filename + ".otf") format('opentype')
-
-    @if $name == "Playlist Script"
-      src: url("/fonts/Playlist/" + $filename + ".otf") format('opentype')
-
-    @if $name == "Sensa Wild Fill"
-      src: url("/fonts/Sensa/" + $filename + ".woff2") format('woff2')
-
-    @if $name == "Great Vibes"
-      src: url("/fonts/Great Vibes/" + $filename + ".ttf") format('ttf')
-
-    @if $name == "Dancing Script"
-      src: url("/fonts/Dancing Script/" + $filename + ".otf") format('opentype')
-
-    @if $name == "Brittany"
-      src: url("/fonts/Brittany/" + $filename + ".ttf") format('ttf')
+    src: url("/fonts/" + $filename) file-format($filename)
