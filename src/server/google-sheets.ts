@@ -5,6 +5,8 @@ async function getGoogleSheets() {
     scopes: ["https://www.googleapis.com/auth/spreadsheets"],
   });
 
+  console.log(JSON.stringify(auth));
+
   return google.sheets({
     version: "v4",
     auth,
@@ -15,7 +17,7 @@ export async function getSheet() {
   const gSheets = await getGoogleSheets();
 
   const response = await gSheets.spreadsheets.values.get({
-    spreadsheetId: process.env.SHEET_ID,
+    spreadsheetId: process.env.GOOGLE_SHEET_ID,
     range: "Sheet1!A:H",
   });
 
@@ -27,7 +29,7 @@ export async function updateRow(payload: Record<string, any>) {
   const range = `Sheet1!A${payload.id + 1}:H${payload.id + 1}`;
 
   const response = await gSheets.spreadsheets.values.update({
-    spreadsheetId: process.env.SHEET_ID,
+    spreadsheetId: process.env.GOOGLE_SHEET_ID,
     range,
     requestBody: {
       majorDimension: "ROWS",

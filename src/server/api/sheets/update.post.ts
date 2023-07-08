@@ -16,7 +16,7 @@ export default defineEventHandler(async (event) => {
   console.log("===========================");
 
   const response = await sheets.spreadsheets.values.update({
-    spreadsheetId: process.env.SHEET_ID,
+    spreadsheetId: process.env.GOOGLE_SHEET_ID,
     range: "Sheet1!A2:B2",
     requestBody: {
       majorDimension: "ROWS",
