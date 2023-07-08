@@ -5,8 +5,6 @@ async function getGoogleSheets() {
     scopes: ["https://www.googleapis.com/auth/spreadsheets"],
   });
 
-  console.log(JSON.stringify(auth));
-
   return google.sheets({
     version: "v4",
     auth,
