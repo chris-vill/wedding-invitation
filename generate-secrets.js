@@ -20,6 +20,6 @@ console.log(__dirname);
 // dist/secrets.json CORRECT
 
 fs.writeFileSync(
-  "/opt/build/repo/server/secrets.json",
+  "/opt/build/repo/dist/secrets.json",
   JSON.stringify(credentials, null, 2)
 );
