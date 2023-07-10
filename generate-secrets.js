@@ -17,4 +17,9 @@ const credentials = {
 
 console.log(__dirname);
 
-fs.writeFileSync("dist/secrets.json", JSON.stringify(credentials, null, 2));
+// dist/secrets.json CORRECT
+
+fs.writeFileSync(
+  "/opt/build/repo/dist/secrets.json",
+  JSON.stringify(credentials, null, 2)
+);
