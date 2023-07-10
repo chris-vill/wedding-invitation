@@ -2,10 +2,10 @@
   "name": "nuxt-app",
   "private": true,
   "scripts": {
-    "build": "nuxt build",
-    "postgenerate": "node generate-secrets.js",
+    "build": "nuxt build && pnpm run generate-secrets",
+    "generate-secrets": "node generate-secrets.js",
     "dev": "nuxt dev",
-    "generate": "nuxt generate && pnpm run postgenerate",
+    "generate": "nuxt generate && pnpm run generate-secrets",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "format": "prettier **/* --write --ignore-unknown",
