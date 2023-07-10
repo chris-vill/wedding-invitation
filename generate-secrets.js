@@ -17,7 +17,4 @@ const credentials = {
 
 // console.log(__dirname + process.env.SECRETS_PATH);
 
-fs.writeFileSync(
-  "/opt/dist/secrets.json",
-  JSON.stringify(credentials, null, 2)
-);
+fs.writeFileSync("opt/dist/secrets.json", JSON.stringify(credentials, null, 2));
