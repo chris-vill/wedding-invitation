@@ -16,6 +16,6 @@ const credentials = {
 };
 
 fs.writeFileSync(
-  process.env.SECRETS_PATH,
+  __dirname + process.env.SECRETS_PATH,
   JSON.stringify(credentials, null, 2)
 );
