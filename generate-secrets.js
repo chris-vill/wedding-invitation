@@ -15,4 +15,7 @@ const credentials = {
   client_x509_cert_url: process.env.GOOGLE_CLIENT_X509_CERT_URL,
 };
 
-fs.writeFileSync(".nuxt/secrets.json", JSON.stringify(credentials, null, 2));
+fs.writeFileSync(
+  process.env.SECRETS_PATH,
+  JSON.stringify(credentials, null, 2)
+);
