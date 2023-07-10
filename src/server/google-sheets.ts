@@ -2,7 +2,6 @@ import { google } from "googleapis";
 
 async function getGoogleSheets() {
   const auth = await google.auth.getClient({
-    keyFile: "./secrets.json",
     scopes: ["https://www.googleapis.com/auth/spreadsheets"],
   });
 
