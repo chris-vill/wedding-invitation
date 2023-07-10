@@ -15,6 +15,11 @@ const credentials = {
   client_x509_cert_url: process.env.GOOGLE_CLIENT_X509_CERT_URL,
 };
 
+console.log("===================");
+console.log(__dirname);
+console.log(__dirname + process.env.SECRETS_PATH);
+console.log("===================");
+
 fs.writeFileSync(
   __dirname + process.env.SECRETS_PATH,
   JSON.stringify(credentials, null, 2)
