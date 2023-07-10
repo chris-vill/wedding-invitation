@@ -13,7 +13,7 @@ async function getGoogleSheets() {
 
   const auth = await google.auth.getClient({
     scopes: ["https://www.googleapis.com/auth/spreadsheets"],
-    keyFile: "../../opt/build/repo/dist/secrets.json", //process.env.SECRETS_PATH,
+    keyFile: "/opt/build/repo/secrets.json", //process.env.SECRETS_PATH,
   });
 
   return google.sheets({
