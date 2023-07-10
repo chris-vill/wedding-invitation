@@ -1,2 +1,2 @@
 [functions]
-  included_files = ["dist/secrets.json"]
+  included_files = ["/opt/build/repo/dist/secrets.json"]
