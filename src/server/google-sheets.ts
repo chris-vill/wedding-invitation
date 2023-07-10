@@ -7,9 +7,13 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 // /opt/build/repo
 
 async function getGoogleSheets() {
+  console.log("======================");
+  console.log(__dirname + process.env.SECRETS_PATH);
+  console.log("======================");
+
   const auth = await google.auth.getClient({
     scopes: ["https://www.googleapis.com/auth/spreadsheets"],
-    keyFile: "/opt/build/repo/.nuxt" + process.env.SECRETS_PATH,
+    keyFile: __dirname + process.env.SECRETS_PATH,
   });
 
   return google.sheets({
