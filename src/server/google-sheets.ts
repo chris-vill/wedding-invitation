@@ -9,7 +9,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 async function getGoogleSheets() {
   const auth = await google.auth.getClient({
     scopes: ["https://www.googleapis.com/auth/spreadsheets"],
-    keyFile: "/opt/build/repo" + process.env.SECRETS_PATH,
+    keyFile: "/opt/build/repo/.nuxt" + process.env.SECRETS_PATH,
   });
 
   return google.sheets({

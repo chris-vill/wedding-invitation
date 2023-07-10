@@ -21,6 +21,6 @@ console.log(__dirname + process.env.SECRETS_PATH);
 console.log("===================");
 
 fs.writeFileSync(
-  __dirname + process.env.SECRETS_PATH,
+  __dirname + "/.nuxt" + process.env.SECRETS_PATH,
   JSON.stringify(credentials, null, 2)
 );
