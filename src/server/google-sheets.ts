@@ -1,19 +1,19 @@
 import { google } from "googleapis";
-import * as path from "path";
-import { fileURLToPath } from "url";
+// import * as path from "path";
+// import { fileURLToPath } from "url";
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+// const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // /opt/build/repo
 
 async function getGoogleSheets() {
-  console.log("======================");
-  console.log(__dirname + process.env.SECRETS_PATH);
-  console.log("======================");
+  // console.log("======================");
+  // console.log(__dirname + process.env.SECRETS_PATH);
+  // console.log("======================");
 
   const auth = await google.auth.getClient({
     scopes: ["https://www.googleapis.com/auth/spreadsheets"],
-    keyFile: __dirname + process.env.SECRETS_PATH,
+    keyFile: process.env.SECRETS_PATH,
   });
 
   return google.sheets({
