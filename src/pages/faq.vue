@@ -7,7 +7,9 @@ div.FAQ
 
   div.item
     h5 Q: Where will the ceremony be?
-    span A: The ceremony will be at Our Lady of Lourdes Parish, Tagaytay City.
+    span
+      | A: The ceremony will be held at
+      b  Our Lady of Lourdes Parish, Tagaytay City.
 
   div.item
     h5 Q: What time will the ceremony start?
@@ -42,8 +44,10 @@ div.FAQ
 
   div.item
     h5 Q: Where will the reception be?
-    span A: Reception will be at Aquila Crystal Palace, Tagaytay.
-    span Appetizers and refereshments will be served. Use this time to mingle, register, find your seats and use the photo booth.
+    span
+      | A: Reception will be at
+      b  Aquila Crystal Palace, Tagaytay.
+    span Upon arrival, snacks and refereshments will be served. Use this time to mingle, register, find your seats and use the photo booth.
 
   div.item
     h5 Q: Can we seat anywhere during the reception?
@@ -61,7 +65,7 @@ div.FAQ
   div.item
     h5 Q: Where can we park our cars? How much will it cost?
     span A: There are parking slots in the ceremony venue, and these are for free.
-    span The recception venue also has ample parking spaces for everyone, parking is like wise free.
+    span The reception venue also has ample parking spaces for everyone, parking is likewise free.
   
   div.item
     h5 Q: Can we take picutres and videos during the wedding? (may idadagdag)
@@ -92,13 +96,13 @@ definePageMeta({
 
 .FAQ
   +fx-col
-  +sensa-wild-fill(20)
   +m-b(rem(64))
-  color: $dark
+  color: $purple-dark-20
   gap: rem(24)
 
   header
     +m-b(rem(12))
+    +sensa-wild-fill(20)
 
     img
       +m-b(rem(48))
@@ -121,13 +125,18 @@ definePageMeta({
     text-align: center
 
   h5
-    color: $purple
+    text-transform: uppercase
+    color: $purple-light-20
 
   .item
     +fx-col
     +m-x(auto)
+    +more-sugar-thin(16)
     gap: rem(8)
     max-width: rem(520)
+
+    b
+      +more-sugar(16)
 
   .highlight
     color: $purple-light-20

@@ -68,9 +68,9 @@ div.EntouragePage
   section.companion
     div
       h2 GROOMS MEN
-      span Kelvin Bersola
+      span Kelvin Matthew Bersola
       span Dave Argene Ragasa
-      span Mavrick Ganaden
+      span Eiron Mavrick Ganaden
       span Gabriel Paolo Valledor
 
     div
@@ -122,15 +122,15 @@ definePageMeta({
     color: $purple
 
   h2
-    +sensa-wild-fill(19)
-    color: $purple-dark-20
-
-  h3
     +sensa-wild-fill(18)
     color: $purple-dark-20
 
+  h3
+    +sensa-wild-fill(16)
+    color: $purple-dark-20
+
   span
-    +playlist-script(17)
+    +playlist-script(16)
     color: $purple-dark-40
     display: block
 

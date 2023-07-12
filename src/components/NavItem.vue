@@ -20,13 +20,13 @@ const props = defineProps({
 
 a
   +montserrat-bold(14)
-  color: $purple-dark-40
+  color: $purple-light-40
   display: block
   padding: 0.5rem 1rem
 
   &:hover
-    color: $purple
+    color: $purple-dark-40
 
   &.router-link-exact-active
-    color: $purple-light-40
+    color: $purple-dark-20
 </style>

@@ -13,7 +13,7 @@ div.AttirePage
       span Please do not wear white, cream, or ivory colors
 
   div.instruction.color-palette
-    span We request our guests to be in any of these colors on our special day (refer to the palette on the right)
+    span We request our guests to be in any of these colors on our special day(refer to the palette on the right)
     img.illustration(src="/images/color_palette.png")
 </template>
 
@@ -44,7 +44,7 @@ definePageMeta({
       color: $purple
 
     span
-      +dancing-script-bold(20)
+      +dancing-script-bold(22)
       color: $purple-dark-20
 
   .instruction

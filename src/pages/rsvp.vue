@@ -3,11 +3,14 @@ div.RSVP
   header
     h1 RSVP
     img(src="/images/prenup_4.png")
-    p The favor of your reply is greatly appreciated on or before August 9, 2023
+    p The favor of your reply is greatly appreciated on or before August 22, 2023
 
   div.rsvp-flow(v-if="!isRsvpJustSent")
     SearchBar(name="fullname" :search-list="guestList" @input-update="onSearch")
     div.form(v-if="!isRsvpAlreadySent && guestData?.fullname" )
+      Input(name="mobileNumber" placeholder="Mobile Number *" @input-update="onFieldsUpdate")
+      span.error-mobile-number(v-if="mobileNumberError") {{ mobileNumberError }}
+      Input(name="emailNumber" placeholder="Email Address (optional)" @input-update="onFieldsUpdate")
       div.confirmation
         span.question Are you going?
         
@@ -40,6 +43,7 @@ const isReasonVisible = ref(false);
 const isRsvpJustSent = ref(false);
 const isSuccess = ref(false);
 const isGoing = ref(true);
+const mobileNumberError = ref("");
 
 const response = await api.getSheet();
 const guestList = response?.data || [];
@@ -84,6 +88,21 @@ async function onSendRsvp() {
     isGoing: isGoing.value,
   };
 
+  if (!guestData.value.mobileNumber) {
+    mobileNumberError.value = "Please input a mobile number";
+    return;
+  }
+
+  if (guestData.value.mobileNumber) {
+    const isNumberValid = validateMobileNumber(guestData.value.mobileNumber);
+
+    if (!isNumberValid) {
+      return;
+    }
+
+    mobileNumberError.value = "";
+  }
+
   const response = await api.updateRow(guestData.value);
 
   if (response?.status === "KO") {
@@ -92,6 +111,28 @@ async function onSendRsvp() {
 
   isRsvpJustSent.value = true;
   isSuccess.value = guestData.value.isGoing as boolean;
+}
+
+function validateMobileNumber(mobileNumber: string) {
+  const isNumberLocal = mobileNumber.startsWith("0");
+  const isNumberGlobal = mobileNumber.startsWith("+63");
+
+  if (isNumberLocal && mobileNumber.length !== 11) {
+    mobileNumberError.value = "Invalid Mobile Number";
+    return false;
+  }
+
+  if (isNumberGlobal && mobileNumber.length !== 13) {
+    mobileNumberError.value = "Invalid Mobile Number";
+    return false;
+  }
+
+  if (!isNumberLocal && !isNumberGlobal) {
+    mobileNumberError.value = "Invalid Mobile Number";
+    return false;
+  }
+
+  return true;
 }
 
 function onSlideToggle(event: Event) {
@@ -182,10 +223,10 @@ function onSlideToggle(event: Event) {
 
   .slide-toggle
     +sensa-wild-fill(18)
-    width: rem(58)
-    height: rem(24)
+    width: rem(62)
+    height: rem(28)
     border: rem(2) solid $purple-dark-40
-    border-radius: rem(12)
+    border-radius: rem(16)
     overflow: hidden
     position: relative
     cursor: pointer
@@ -195,7 +236,7 @@ function onSlideToggle(event: Event) {
 
   .slider
     +fx
-    height: rem(20)
+    height: rem(24)
     position: absolute
     top: 0
     left: 0
@@ -204,24 +245,30 @@ function onSlideToggle(event: Event) {
 
     span
       padding-top: rem(1)
-      display: block
+      display: flex
       width: 100%
       height: 100%
+      align-items: center
 
     span:first-of-type
-      background-color: #5cff59
+      background-color: $purple-light-20//#5cff59
       +p-x(rem(6), rem(16))
 
     span:last-of-type
       background-color: #ff5c59
-      +p-x(rem(16), rem(8))
+      +p-x(rem(18), rem(14))
 
     div
       background-color: $light
       position: absolute
       border: 2px solid $dark
-      min-height: rem(24)
-      min-width: rem(24)
+      min-height: rem(28)
+      min-width: rem(28)
       border-radius: 50%
       left: rem(32)
+
+  .error-mobile-number
+    +sensa-wild-fill(16)
+    margin-bottom: 0.5rem
+    color: red
 </style>
