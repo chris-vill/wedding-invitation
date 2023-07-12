@@ -3,7 +3,7 @@ div.AttirePage
   header
     h1 Attire
     img(src="/images/prenup_5.png")
-    span We hope our wedding will be a fun excuse for you to dress up! 😉
+    span We hope our wedding will be a fun excuse for you to dress up and be fab! 😉
 
   div.instruction.dress-code
     img.illustration(src="/images/dress_code.png")

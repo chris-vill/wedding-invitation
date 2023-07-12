@@ -4,8 +4,8 @@
   "scripts": {
     "build": "pnpm run generate-secrets && nuxt build",
     "generate-secrets": "node generate-secrets.js",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate && pnpm run generate-secrets",
+    "dev": "pnpm run generate-secrets && nuxt dev",
+    "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "format": "prettier **/* --write --ignore-unknown",

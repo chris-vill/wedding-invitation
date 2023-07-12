@@ -43,7 +43,7 @@ onMounted(() => {
   .content-wrapper
     +fx-col
     +p-y(rem(32), rem(40))
-    overflow: scroll
+    overflow-y: scroll
     height: 100%
     width: 100%
 

@@ -2,24 +2,42 @@
 div.EntouragePage
   h1 Entourage
 
+  section.priest
+    h2 Officiating Priest
+    h3 Fr. Allen De Guzman
+
+  section.parents
+    div
+      h2 Parents of the Groom
+      span Mr. Roberto Villaran
+      span Mrs. Aida Villaran
+    div
+      h2 Parents of the Bride
+      span Mr. Sammy Sambajon
+      span Mrs. Myrna Sambajon
+
   section.guidance
     header
       h2 Bearer of Guidance
       h3 (Godparents)
     div.col-2
       div
-        span Mr. Frederich Malabanan
-        span Mr. Jose Dioquino
-        span Mr. Ronnie Bersola
-        span Mr. Jose Andes
-        span Mr. Jerson Andes
-        span Mr. Romulo Sison Jr.
-      div
+        span Mr. Frederick Malabanan
         span Mrs. Myra Ganaden
+      div
+        span Mr. Jose Dioquino
         span Mrs. Lea Cagabhion
+      div
+        span Mr. Ronnie Bersola
         span Mrs. Maria Nonica Bersola
+      div
+        span Mr. Jose Andes
         span Mrs. Joana Pintac
+      div
+        span Mr. Jerson Andes
         span Mrs. Eden Anglo
+      div
+        span Mr. Romulo Sison Jr.
         span Mrs. Arliza Villarosa
 
   section.best-honor
@@ -112,7 +130,7 @@ definePageMeta({
     color: $purple-dark-20
 
   span
-    +playlist-script(20)
+    +playlist-script(18)
     color: $purple-dark-40
     display: block
 
@@ -125,6 +143,9 @@ definePageMeta({
   section
     width: 100%
 
+  .priest
+    text-align: center
+
   .guidance
     header
       +m-b(rem(14))
@@ -134,16 +155,23 @@ definePageMeta({
       text-align: center
 
     .col-2
-      +fx
-      gap: rem(24)
+      +fx-col
 
       div
-        flex-basis: 100%
+        +fx
+        gap: rem(24)
+        justify-content: center
 
-      div:first-child
-        text-align: right
+        span
+          flex-basis: 100%
 
-  .best-honor, .companion
+          &:first-child
+            text-align: right
+
+          &:last-child
+            text-align: left
+
+  .best-honor, .companion, .parents
     +fx
     gap: rem(24)
 

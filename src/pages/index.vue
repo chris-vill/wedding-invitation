@@ -13,7 +13,15 @@ div.HomePage
     span.date 09
     span.time 2:30 PM
     span.year 2023
-  span.std Save The Date!
+  div.location
+    span Ceremony will be held at
+    span Our Lady Of Lourdes Parish
+    span Tagaytay City
+  div.location
+    span Reception to follow at
+    span Aquila Crystal Palace
+    span Brgy. Maitim 2nd East, Emilio Aguinaldo Highway, Tagaytay City
+  p.verse "When the time is right, I, the Lord will make it happen." ISAIAH 60:22
 </template>
 
 <script lang="ts" setup>
@@ -52,11 +60,11 @@ definePageMeta({
     +m-x(auto)
     display: block
     text-align: center
-    width: rem(400)
+    max-width: rem(400)
 
   .details
     +fx
-    +m-b(rem(52))
+    +m-b(rem(32))
     align-items: center
     flex-wrap: wrap
     justify-content: center
@@ -82,13 +90,20 @@ definePageMeta({
     +p-y(rem(8))
     flex-basis: rem(120)
 
-  .std
-    +breathing(32)
-    color: $purple
-    display: block
-    margin: 0 auto
+  .location
+    +fx-col
+    align-items: center
+    margin-bottom: rem(48)
     text-align: center
-    width: fit-content
-</style>
 
-<!-- 3:30pm -->
+    span:first-child
+      +breathing(14)
+    span:nth-child(2)
+      +lovelo-black(24)
+    span:last-child
+      +lora(16)
+
+  .verse
+    +porcelain(18)
+    text-align: center
+</style>

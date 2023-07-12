@@ -1,4 +1,5 @@
 const fs = require("fs");
+
 // Load variables from .env into process.env
 require("dotenv").config();
 
@@ -15,11 +16,7 @@ const credentials = {
   client_x509_cert_url: process.env.GOOGLE_CLIENT_X509_CERT_URL,
 };
 
-console.log(__dirname);
-
-// dist/secrets.json CORRECT
-
 fs.writeFileSync(
-  "/opt/build/repo/secrets.json",
+  process.env.SECRETS_PATH,
   JSON.stringify(credentials, null, 2)
 );
