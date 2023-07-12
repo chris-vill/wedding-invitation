@@ -122,7 +122,7 @@ definePageMeta({
     color: $purple
 
   h2
-    +sensa-wild-fill(24)
+    +sensa-wild-fill(20)
     color: $purple-dark-20
 
   h3
