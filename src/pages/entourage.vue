@@ -4,7 +4,7 @@ div.EntouragePage
 
   section.priest
     h2 Officiating Priest
-    h3 Fr. Allen De Guzman
+    span Fr. Allen De Guzman
 
   section.parents
     div
@@ -122,7 +122,7 @@ definePageMeta({
     color: $purple
 
   h2
-    +sensa-wild-fill(20)
+    +sensa-wild-fill(19)
     color: $purple-dark-20
 
   h3
@@ -130,7 +130,7 @@ definePageMeta({
     color: $purple-dark-20
 
   span
-    +playlist-script(18)
+    +playlist-script(17)
     color: $purple-dark-40
     display: block
 
@@ -145,6 +145,9 @@ definePageMeta({
 
   .priest
     text-align: center
+
+    h2
+      +m-b(rem(8))
 
   .guidance
     header
