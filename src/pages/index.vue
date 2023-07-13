@@ -61,7 +61,7 @@ definePageMeta({
     +m-x(auto)
     display: block
     text-align: center
-    width: rem(340)
+    width: rem(330)
 
   .details
     +fx
