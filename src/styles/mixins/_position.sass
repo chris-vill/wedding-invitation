@@ -15,8 +15,29 @@
   display: flex
   flex-direction: column
 
-=pos-abs
+=pos-abs($val1: null, $val2: null, $val3: null, $val4: null)
   position: absolute
+
+  @if $val1 != null and $val2 == null and $val3 == null and $val4 == null
+    inset: $val1
+
+  @else if $val3 == null and $val4 == null
+    top: $val1
+    bottom: $val1
+    left: $val2
+    right: $val2
+
+  @else if $val4 == null
+    top: $val1
+    bottom: $val3
+    left: $val2
+    right: $val2
+
+  @else
+    top: $val1
+    right: $val2
+    bottom: $val3
+    left: $val4
 
 =pos-rel
   position: relative

@@ -39,9 +39,10 @@ definePageMeta({
     display: block
     margin: 0 auto
     text-align: center
-    width: rem(200)
+    width: rem(190)
 
   .main-delimeter
+    +lora(16)
     display: block
     margin: rem(32) auto
     text-align: center
@@ -60,7 +61,7 @@ definePageMeta({
     +m-x(auto)
     display: block
     text-align: center
-    max-width: rem(400)
+    width: rem(350)
 
   .details
     +fx

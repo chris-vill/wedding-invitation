@@ -21,7 +21,7 @@ div.RSVP
             span NO
 
       div.reason(v-if="isReasonVisible")
-        Input(name="reason" placeholder="Any reason for not coming?" @input-update="onFieldsUpdate")
+        Input(name="reason" placeholder="Any reason for not coming? 😁" @input-update="onFieldsUpdate")
       
       Button(label="Send RSVP" @click="onSendRsvp")
   
@@ -236,12 +236,13 @@ function onSlideToggle(event: Event) {
 
   .slider
     +fx
-    height: rem(24)
+    height: rem(26)
     position: absolute
     top: 0
     left: 0
     align-items: center
     transition: 250ms left
+    color: $light
 
     span
       padding-top: rem(1)

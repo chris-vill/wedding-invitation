@@ -1,7 +1,7 @@
 <template lang="pug">
 div.SearchBar
   div
-    input(placeholder="Search your full name" @input="onSearch" @click="onSearchBarClick" :value="query || ''" autocomplete="no")
+    input(placeholder="Search your name" @input="onSearch" @click="onSearchBarClick" :value="query || ''" autocomplete="no")
     ul(v-if="hasSearched").search-result
       li(v-for="guest in filteredList" @click="onResultItemClick") {{ guest.fullname }}
       li(v-if="isQueryEmpty") Sorry, you're not on the list 😔

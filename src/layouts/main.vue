@@ -6,7 +6,7 @@ div.MainLayout(ref="mainRef")
   div.content-wrapper
     slot
     img.logo(src="/images/logo.png")
-//- audio(ref="audioRef" autoplay loop src="/audio/wedding-themed-music.mp3" controls)
+  Icon(name="caret-down")
 </template>
 
 <script setup lang="ts">
@@ -74,6 +74,10 @@ onMounted(() => {
     +m-x(auto)
     +p-t(rem(40))
     width: rem(160)
+
+  & > :deep(.Icon)
+    +pos-abs
+    bottom: 0
 
 +media((tablet, desktop))
   .MainLayout
