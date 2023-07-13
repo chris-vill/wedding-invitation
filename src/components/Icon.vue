@@ -1,23 +1,23 @@
 <template lang="pug">
-svg.Icon(v-if="props.name === 'caret-left'" width="14" height="24" viewBox="0 0 14 24" fill="none" xmlns="http://www.w3.org/2000/svg")
+svg.Icon(v-if="props.name === 'caret-left'" @click="emit('click')" width="14" height="24" viewBox="0 0 14 24" fill="none" xmlns="http://www.w3.org/2000/svg")
   path(d="M0.683327 13.6951C-0.227776 12.758 -0.227776 11.2361 0.683327 10.299L10.013 0.70304C10.6836 0.0133279 11.6822 -0.189088 12.5568 0.185756C13.4315 0.5606 14 1.43024 14 2.40483V21.5968C14 22.5639 13.4315 23.4411 12.5568 23.8159C11.6822 24.1907 10.6836 23.9808 10.013 23.2986L0.683327 13.7026V13.6951Z" fill="black")
 
-svg.Icon(v-if="props.name === 'caret-right'" width='14' height='24' viewbox='0 0 14 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+svg.Icon(v-if="props.name === 'caret-right'" @click="emit('click')" width='14' height='24' viewbox='0 0 14 24' fill='none' xmlns='http://www.w3.org/2000/svg')
   path(d='M13.3167 13.6951C14.2278 12.758 14.2278 11.2361 13.3167 10.299L3.98698 0.70304C3.31641 0.0133279 2.31784 -0.189088 1.44319 0.185756C0.568528 0.5606 0 1.43024 0 2.40483V21.5968C0 22.5639 0.568528 23.4411 1.44319 23.8159C2.31784 24.1907 3.31641 23.9808 3.98698 23.2986L13.3167 13.7026V13.6951Z' fill='black')
 
-svg.Icon(v-if="props.name === 'caret-down'" xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewbox='0 0 512 512')
+svg.Icon(v-if="props.name === 'caret-down'" @click="emit('click')" xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewbox='0 0 512 512')
   path(fill='currentColor' d='m98 190.06l139.78 163.12a24 24 0 0 0 36.44 0L414 190.06c13.34-15.57 2.28-39.62-18.22-39.62h-279.6c-20.5 0-31.56 24.05-18.18 39.62Z')
 
-svg.Icon(v-if="props.name === 'chevron-left'" width='14' height='24' viewbox='0 0 14 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+svg.Icon(v-if="props.name === 'chevron-left'" @click="emit('click')" width='14' height='24' viewbox='0 0 14 24' fill='none' xmlns='http://www.w3.org/2000/svg')
   path(d='M0.512595 10.7897C-0.170865 11.4591 -0.170865 12.5462 0.512595 13.2157L11.0105 23.4979C11.694 24.1674 12.8039 24.1674 13.4874 23.4979C14.1709 22.8285 14.1709 21.7414 13.4874 21.072L4.22515 12L13.4819 2.92804C14.1654 2.25862 14.1654 1.17148 13.4819 0.502064C12.7985 -0.167355 11.6885 -0.167355 11.0051 0.502064L0.507128 10.7843L0.512595 10.7897Z' fill='black')
 
-svg.Icon(v-if="props.name === 'chevron-right'" width='14' height='24' viewbox='0 0 14 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+svg.Icon(v-if="props.name === 'chevron-right'" @click="emit('click')" width='14' height='24' viewbox='0 0 14 24' fill='none' xmlns='http://www.w3.org/2000/svg')
   path(d='M13.4874 10.7897C14.1709 11.4591 14.1709 12.5462 13.4874 13.2157L2.98945 23.4979C2.30599 24.1674 1.19606 24.1674 0.512595 23.4979C-0.170865 22.8285 -0.170865 21.7414 0.512595 21.072L9.77485 12L0.518063 2.92804C-0.165397 2.25862 -0.165397 1.17148 0.518063 0.502064C1.20152 -0.167355 2.31146 -0.167355 2.99492 0.502064L13.4929 10.7843L13.4874 10.7897Z' fill='black')
 
-svg.Icon(v-if="props.name === 'heart'" width='22' height='19' viewbox='0 0 22 19' fill='none' xmlns='http://www.w3.org/2000/svg')
+svg.Icon(v-if="props.name === 'heart'" @click="emit('click')" width='22' height='19' viewbox='0 0 22 19' fill='none' xmlns='http://www.w3.org/2000/svg')
   path(d='M13 17.908C12.508 18.216 12.097 18.454 11.808 18.617C11.655 18.703 11.5 18.787 11.345 18.869H11.343C11.2369 18.9236 11.1193 18.952 11 18.952C10.8807 18.952 10.7631 18.9236 10.657 18.869C10.5007 18.7875 10.3457 18.7034 10.192 18.617C8.48976 17.6568 6.88167 16.5386 5.389 15.277C2.8 13.072 0 9.831 0 6.013C0 2.552 2.829 0 5.736 0C8.03 0 9.881 1.226 11 3.105C12.12 1.226 13.97 0 16.264 0C19.17 0 22 2.552 22 6.014C22 9.832 19.199 13.074 16.611 15.276C15.4719 16.2387 14.2651 17.1183 13 17.908Z' fill='black')
 
-svg.Icon(v-if="props.name === 'screwdriver-wrench'" width='64' height='64' viewbox='0 0 64 64' xmlns='http://www.w3.org/2000/svg')
+svg.Icon(v-if="props.name === 'screwdriver-wrench'" @click="emit('click')" width='64' height='64' viewbox='0 0 64 64' xmlns='http://www.w3.org/2000/svg')
   path(d='M78.6 5C69.1-2.4 55.6-1.5 47 7L7 47c-8.5 8.5-9.4 22-2.1 31.6l80 104c4.5 5.9 11.6 9.4 19 9.4h54.1l109 109c-14.7 29-10 65.4 14.3 89.6l112 112c12.5 12.5 32.8 12.5 45.3 0l64-64c12.5-12.5 12.5-32.8 0-45.3l-112-112c-24.2-24.2-60.6-29-89.6-14.3l-109-109V104c0-7.5-3.5-14.5-9.4-19L78.6 5zM19.9 396.1C7.2 408.8 0 426.1 0 444.1C0 481.6 30.4 512 67.9 512c18 0 35.3-7.2 48-19.9L233.7 374.3c-7.8-20.9-9-43.6-3.6-65.1l-61.7-61.7L19.9 396.1zM512 144c0-10.5-1.1-20.7-3.2-30.5c-2.4-11.2-16.1-14.1-24.2-6l-63.9 63.9c-3 3-7.1 4.7-11.3 4.7H352c-8.8 0-16-7.2-16-16V102.6c0-4.2 1.7-8.3 4.7-11.3l63.9-63.9c8.1-8.1 5.2-21.8-6-24.2C388.7 1.1 378.5 0 368 0C288.5 0 224 64.5 224 144l0 .8 85.3 85.3c36-9.1 75.8 .5 104 28.7L429 274.5c49-23 83-72.8 83-130.5zM56 432a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z')
 </template>
 
@@ -28,6 +28,7 @@ const props = defineProps({
     required: true,
   },
 });
+const emit = defineEmits(["click"]);
 </script>
 
 <style lang="sass" scoped>

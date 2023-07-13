@@ -3,19 +3,20 @@ div.NavBar
   div.pip-container
     div.pips(v-for="(_, index) in navItems" :class="{ active: index === activeItemIndex }")
   div.bar
-    Icon(name="caret-left")
+    Icon(name="caret-left" @click="onNavigate('prev')")
     nav
       NavItem(
         v-for="navItem in navItems"
         :label="navItem.label"
         :route="navItem.route"
       )
-    Icon(name="caret-right")
+    Icon(name="caret-right" @click="onNavigate('next')")
 </template>
 
 <script setup lang="ts">
 const activeItemIndex = ref(0);
 const route = useRoute();
+const router = useRouter();
 const navItems = [
   {
     label: "Home",
@@ -60,13 +61,30 @@ function setPips() {
     (item) => item.route === route.path
   );
 }
+
+function onNavigate(direction: "prev" | "next") {
+  let newIndex;
+
+  if (direction === "next" && activeItemIndex.value < navItems.length - 1) {
+    newIndex = activeItemIndex.value + 1;
+  }
+
+  if (direction === "prev" && activeItemIndex.value > 0) {
+    newIndex = activeItemIndex.value - 1;
+  }
+
+  if ([undefined, activeItemIndex.value].includes(newIndex)) {
+    return;
+  }
+
+  router.push(navItems[newIndex as number].route);
+}
 </script>
 
 <style lang="sass" scoped>
 @use "@/styles/abstracts" as *
 
 .NavBar
-
   .pip-container
     +fx
     +m-b(rem(4))
@@ -103,4 +121,8 @@ function setPips() {
     +media((desktop))
       :deep(.Icon)
         display: none
+
+  +media(desktop)
+    .pip-container
+      display: none
 </style>

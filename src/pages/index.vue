@@ -98,8 +98,12 @@ definePageMeta({
 
     span:first-child
       +breathing(14)
+
     span:nth-child(2)
       +lovelo-black(24)
+      +m-y(rem(8))
+      color: $purple
+
     span:last-child
       +lora(16)
 
