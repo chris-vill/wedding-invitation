@@ -167,7 +167,6 @@ definePageMeta({
   header
     +fx-col
     +m-b(rem(16))
-    +sensa-wild-fill(20)
     gap: rem(24)
 
   h1
@@ -180,6 +179,7 @@ definePageMeta({
     display: block
 
   .page-description
+    +sensa-wild-fill(20)
     color: $purple-dark-40
     text-align: center
 

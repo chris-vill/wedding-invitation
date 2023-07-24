@@ -1,7 +1,7 @@
 <template lang="pug">
 div.AttirePage
   header
-    h1 Attire
+    h1 Attire Guide
     img(src="/images/prenup_5.png")
     span We hope our wedding will be a fun excuse for you to dress up and be fab! 😉
 
