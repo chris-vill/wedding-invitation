@@ -33,8 +33,8 @@ definePageMeta({
     text-align: center
     position: absolute
     width: rem(180)
-    left: 42px//rem(48)
-    top: -10px//rem(-8)
+    left: 38px//rem(48)
+    top: -14px//rem(-8)
 
   p
     +m-b(rem(24))
