@@ -9,11 +9,11 @@ div.AttirePage
     img.illustration(src="/images/dress_code.png")
     div
       span Casual, Semi-formal
-      span Strictly: No slippers or flip-flops, tank tops
+      span Strictly: No slippers / flip-flops and tank tops
       span Please do not wear white, cream, or ivory colors
 
   div.instruction.color-palette
-    span We request our guests to be in any of these colors on our special day(refer to the palette on the right)
+    span We request our guests to be in any of these colors on our special day <br> (refer to the palette on the right)
     img.illustration(src="/images/color_palette.png")
 </template>
 
