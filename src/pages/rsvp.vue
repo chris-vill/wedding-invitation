@@ -3,7 +3,9 @@ div.RSVP
   header
     h1 RSVP
     img(src="/images/prenup_4.png")
-    p The favor of your reply is greatly appreciated on or before August 22, 2023
+    p The favor of your reply is greatly appreciated
+    p on or before
+    p August 22, 2023
 
   div.rsvp-flow(v-if="!isRsvpJustSent")
     SearchBar(name="fullname" :search-list="guestList" @input-update="onSearch")
@@ -12,7 +14,7 @@ div.RSVP
       span.error-mobile-number(v-if="mobileNumberError") {{ mobileNumberError }}
       Input(name="emailNumber" placeholder="Email Address (optional)" @input-update="onFieldsUpdate")
       div.confirmation
-        span.question Are you going?
+        span.question Are you coming?
         
         div.slide-toggle(@click="onSlideToggle")
           div.slider
