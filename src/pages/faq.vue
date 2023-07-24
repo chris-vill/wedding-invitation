@@ -19,7 +19,7 @@ div.FAQ
     h5.question Q: Do we really need to RSVP?
     span.answer
       | A:
-      b.highlight Yes please
+      b.highlight  Yes please
       | . We need this to consolidate guest details and finalize the head count for catering and seating arrangement. We also need a final guest list since the reception venue is strict in allowing entry.
 
   div.item
@@ -59,7 +59,7 @@ div.FAQ
     h5.question Q: Can we seat anywhere during the reception?
     span.answer
       | A: 
-      b.highlight Please don't 😔
+      b.highlight  Please don't 😔
       | . It took us a lot of effort and discussion to finish the seating arrangement which is planned for everyone's convenience and network preference.
     span.answer You'll be seated along with family or friends.
 
@@ -77,7 +77,7 @@ div.FAQ
     h5.question Q: Can we take pictures and videos during the wedding? (may idadagdag)
     span.answer
       | A: 
-      b.highlight Our ceremony is unplugged 
+      b.highlight  Our ceremony is unplugged 
       | and we plan to keep it solemn. Please put down and keep your phones away during the processional and ceremony. After we are pronounced husband and wife, you're free to take shots 😊
     span.answer We have an amazing team of photographers and videographers to capture the moment. We promise to share the pictures with you after the wedding!
 
