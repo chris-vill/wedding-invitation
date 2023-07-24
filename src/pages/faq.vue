@@ -102,8 +102,8 @@ definePageMeta({
 
 .FAQ
   +fx-col
-  +m-b(rem(64))
-  gap: rem(24)
+  +m-b(rem(16))
+  gap: rem(32)
 
   header
     +fx-col
@@ -127,7 +127,7 @@ definePageMeta({
   .item
     +fx-col
     +more-sugar-thin(16)
-    gap: rem(8)
+    gap: rem(12)
     margin-right: auto
     max-width: rem(520)
 
