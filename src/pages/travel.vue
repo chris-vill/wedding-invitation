@@ -1,22 +1,22 @@
 <template lang="pug">
 div.TravelPage
   header
-    h1 Travel
-    img(src="/images/prenup_2.png")
+    h1.animated.animation Travel
+    img.animated.animation(src="/images/prenup_2.png")
   
   .location-container
-    .location.lourdes
+    .location.lourdes.animated.animation
       img(src="/images/lourdes.jpg")
       span Our Lady of Lourdes, Tagaytay
       a(href="https://ul.waze.com/ul?preview_venue_id=79298701.792724867.1431116&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location") Go To Church
     
-    .location.aquila
+    .location.aquila.animated.animation
       img(src="/images/aquila.jpg")
       span Aquila Crystal Palace, Tagaytay
       a(href="https://ul.waze.com/ul?preview_venue_id=79298701.792724868.10452740&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location") Go To Reception
     
   //- h3 Own a car? scan the QR codes below
-  .qr-container
+  .qr-container.animated.animation
     .qr-code
       img(src="/images/our-lady-of-lourdes-qr.png")
       span Our Lady of Lourdes, Tagaytay
@@ -28,6 +28,26 @@ div.TravelPage
 <script lang="ts" setup>
 definePageMeta({
   layout: "main",
+});
+
+onMounted(() => {
+  // Animate Intro
+  const animatedEls = document.querySelectorAll(".animated");
+  animatedEls.forEach((animatedEl, i) => {
+    setTimeout(() => {
+      animatedEl.classList.remove("animation");
+    }, 150 * (1 + i));
+  });
+});
+
+onBeforeUnmount(() => {
+  // Animate Outro
+  const animatedEls = document.querySelectorAll(".animated");
+  animatedEls.forEach((animatedEl, i) => {
+    setTimeout(() => {
+      animatedEl.classList.add("animation");
+    }, 150 * (1 + i));
+  });
 });
 </script>
 
@@ -116,6 +136,13 @@ definePageMeta({
     img
       height: rem(256)
       width: rem(256)
+
+  .animation
+    transform: translateY(50%)
+    opacity: 0
+
+  .animated
+    transition: all 450ms
 
   +media((mobile, tablet))
     .aquila img

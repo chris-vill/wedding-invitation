@@ -72,7 +72,7 @@ onMounted(() => {
   .logo
     +m-t(auto)
     +m-x(auto)
-    +p-t(rem(40))
+    +p-t(rem(62))
     width: rem(160)
 
   & > :deep(.Icon)

@@ -1,32 +1,54 @@
 <template lang="pug">
 div.HomePage
-  p.quote IN GOD'S PERFECT TIME AND WITH THE BLESSING OF OUR PARENTS
-  span.main-delimeter WE,
-  div.couple
+  p.quote.animated.animation IN GOD'S PERFECT TIME AND WITH THE BLESSING OF OUR PARENTS
+  span.main-delimeter.animated.animation WE,
+  div.couple.animated.animation
     span.groom Christopher
     span.couple-delimiter and
     span.bride Mary Joy
-  span.request REQUEST THE HONOR OF YOUR PRESENCE AS WE EXCHANGE OUR WEDDING VOWS ON
-  div.details
+  span.request.animated.animation REQUEST THE HONOR OF YOUR PRESENCE AS WE EXCHANGE OUR WEDDING VOWS ON
+  div.details.animated.animation
     span.month SEPTEMBER
     span.day SATURDAY
     span.date 09
     span.time 2:30 PM
     span.year 2023
-  div.location
+  div.location.animated.animation
     span Ceremony will be held at
     span Our Lady Of Lourdes Parish
     span Tagaytay City
-  div.location
+  div.location.animated.animation
     span Reception to follow at
     span Aquila Crystal Palace
     span Brgy. Maitim 2nd East, Emilio Aguinaldo Highway, Tagaytay City
-  p.verse "When the time is right, I, the Lord will make it happen." ISAIAH 60:22
+  p.verse.animated.animation "When the time is right, I, the Lord will make it happen." ISAIAH 60:22
 </template>
 
 <script lang="ts" setup>
+const route = useRoute();
+
 definePageMeta({
   layout: "main",
+});
+
+onMounted(() => {
+  // Animate Intro
+  const animatedEls = document.querySelectorAll(".animated");
+  animatedEls.forEach((animatedEl, i) => {
+    setTimeout(() => {
+      animatedEl.classList.remove("animation");
+    }, 150 * (1 + i));
+  });
+});
+
+onBeforeUnmount(() => {
+  // Animate Outro
+  const animatedEls = document.querySelectorAll(".animated");
+  animatedEls.forEach((animatedEl, i) => {
+    setTimeout(() => {
+      animatedEl.classList.add("animation");
+    }, 150 * (1 + i));
+  });
 });
 </script>
 
@@ -111,4 +133,11 @@ definePageMeta({
   .verse
     +porcelain(18)
     text-align: center
+
+  .animation
+    transform: translateY(50%)
+    opacity: 0
+
+  .animated
+    transition: all 450ms
 </style>

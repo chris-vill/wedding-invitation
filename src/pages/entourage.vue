@@ -1,12 +1,12 @@
 <template lang="pug">
 div.EntouragePage
-  h1 Entourage
+  h1.animated.animation Entourage
 
-  section.priest
+  section.priest.animated.animation
     h2 Officiating Priest
     span Fr. Allen De Guzman
 
-  section.parents
+  section.parents.animated.animation
     div
       h2 Parents of the Groom
       span Mr. Roberto Villaran
@@ -16,7 +16,7 @@ div.EntouragePage
       span Mr. Sammy Sambajon
       span Mrs. Myrna Sambajon
 
-  section.guidance
+  section.guidance.animated.animation
     header
       h2 Bearer of Guidance
       h3 (Godparents)
@@ -40,7 +40,7 @@ div.EntouragePage
         span Mr. Romulo Sison Jr.
         span Mrs. Arliza Villarosa
 
-  section.best-honor
+  section.best-honor.animated.animation
     div
       h2 BEST MAN
       span Mark Jeanbert Nabong
@@ -49,7 +49,7 @@ div.EntouragePage
       h2 MAID OF HONOR
       span Melanie Sambajon
 
-  section.blessings
+  section.blessings.animated.animation
     h2 Bearer of Blessings
     div.col-3
       div
@@ -65,7 +65,7 @@ div.EntouragePage
         span Charles Klient Anglo
         span Mikee Ann Anglo
 
-  section.companion
+  section.companion.animated.animation
     div
       h2 GROOMS MEN
       span Kelvin Matthew Bersola
@@ -80,7 +80,7 @@ div.EntouragePage
       span Ma. Sarah Jane Paguirigan
       span Marjorie Andes
 
-  section.kids
+  section.kids.animated.animation
     h2
       | To Carry Our Symbols Of Love
       br
@@ -106,6 +106,26 @@ div.EntouragePage
 <script lang="ts" setup>
 definePageMeta({
   layout: "main",
+});
+
+onMounted(() => {
+  // Animate Intro
+  const animatedEls = document.querySelectorAll(".animated");
+  animatedEls.forEach((animatedEl, i) => {
+    setTimeout(() => {
+      animatedEl.classList.remove("animation");
+    }, 150 * (1 + i));
+  });
+});
+
+onBeforeUnmount(() => {
+  // Animate Outro
+  const animatedEls = document.querySelectorAll(".animated");
+  animatedEls.forEach((animatedEl, i) => {
+    setTimeout(() => {
+      animatedEl.classList.add("animation");
+    }, 150 * (1 + i));
+  });
 });
 </script>
 
@@ -222,6 +242,13 @@ definePageMeta({
 
       div
         flex-basis: 100%
+
+  .animation
+    transform: translateY(50%)
+    opacity: 0
+
+  .animated
+    transition: all 450ms
 
   +media((tablet, desktop))
     .kids, .blessings
