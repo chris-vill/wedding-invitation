@@ -2,117 +2,133 @@
 div.RSVP
   header
     h1 RSVP
-    img(src="/images/prenup_4.png")
-    p The favor of your reply is greatly appreciated
-    p on or before
-    p August 22, 2023
+    img.prenup-pic(src="/images/prenup_4.png")
+    p.subtitle The favor of your reply is greatly appreciated
+    p.subtitle on or before
+    p.subtitle August 22, 2023
 
-  div.rsvp-flow(v-if="!isRsvpJustSent")
-    SearchBar(name="fullname" :search-list="guestList" @input-update="onSearch")
-    div.form(v-if="!isRsvpAlreadySent && guestData?.fullname" )
-      Input(name="mobileNumber" placeholder="Mobile Number *" @input-update="onFieldsUpdate")
-      span.error-mobile-number(v-if="mobileNumberError") {{ mobileNumberError }}
-      Input(name="emailNumber" placeholder="Email Address (optional)" @input-update="onFieldsUpdate")
-      div.confirmation
-        span.question Are you coming?
-        
-        div.slide-toggle(@click="onSlideToggle")
-          div.slider
-            span YES
-            div
-            span NO
+  main
+    div.flow(v-if="!states?.isRsvpSent")
+      SearchBar(v-if="!states?.isRsvpSent" name="fullname" :search-list="states?.guestList" @result-selected="onSearch" @input-change="handleInputChange")
 
-      div.reason(v-if="isReasonVisible")
-        Input(name="reason" placeholder="Any reason for not coming? 😁" @input-update="onFieldsUpdate")
+      div.form(v-if="states?.selectedGuest && !states.isAlreadyGoing")
+        Input(name="mobileNumber" placeholder="Mobile Number *" @input-update="handleFieldUpdate")
+        span.error-mobile-number(v-if="states.mobileNumberError") {{ states.mobileNumberError }}
+        Input(name="emailAddress" placeholder="Email Address (optional)" @input-update="handleFieldUpdate")
+
+        div.confirmation
+          span.question Are you coming?
+
+          div.slide-toggle(@click="onSlideToggle")
+            div.slider
+              span YES
+              div
+              span NO
+
+        Input(v-if="!states.isGoing" name="reason" placeholder="Any reason for not coming? 😁" @input-update="handleFieldUpdate")
       
-      Button(label="Send RSVP" @click="onSendRsvp")
-  
-  div.finish-message(v-if="isRsvpJustSent")
-    span(v-if="isSuccess") Thanks for confirming, see you on our wedding day! 🥰
-    span(v-if="!isSuccess") Thanks for confirming 🥹
-      
-  div.message(v-if="isRsvpAlreadySent")
-    | You already sent an RSVP
+        Button(label="Send RSVP" @click="handleSubmit")
+
+    div.already-going(v-if="states?.isAlreadyGoing")
+      | You already sent an RSVP
+
+    div.flow-finish(v-if="states?.isRsvpSent")
+      span(v-isf="states.isGoing") Thanks for confirming, see you on our wedding day! 🥰
+      span(v-if="!states.isGoing") Thanks for confirming 🥹
+      Button(label="RSVP a companion?" @click="handleRsvpAgain")
 </template>
 
 <script lang="ts" setup>
 import * as api from "@/core/api";
 import * as T from "@/core/types";
 
-const guestData = ref<Partial<T.Guest>>({});
-const isRsvpAlreadySent = ref(false);
-const isReasonVisible = ref(false);
-const isRsvpJustSent = ref(false);
-const isSuccess = ref(false);
-const isGoing = ref(true);
-const mobileNumberError = ref("");
-
-const response = await api.getSheet();
-const guestList = response?.data || [];
+const states = reactive<{
+  guestList: T.Guest[];
+  isAlreadyGoing: boolean;
+  isGoing: boolean;
+  isRsvpSent?: boolean;
+  mobileNumberError?: string;
+  selectedGuest?: T.Guest | null;
+}>({
+  guestList: [],
+  isAlreadyGoing: false,
+  isGoing: true,
+});
 
 definePageMeta({
   layout: "main",
 });
 
-function onSearch(fieldData: Record<string, any>) {
-  const guestFromList = (findGuestFromList(fieldData.fullname) ||
-    {}) as T.Guest;
+onBeforeMount(async () => {
+  const response = await api.getSheet();
+  states.guestList = response?.data || [];
+});
 
-  isRsvpAlreadySent.value = guestFromList.isGoing !== null;
+function onSearch(searchResult: Record<string, any>) {
+  const selectedGuest = findGuestFromList(searchResult.fullname);
 
-  guestData.value = {
-    ...guestFromList,
-    ...fieldData,
-  };
+  states.selectedGuest = selectedGuest;
+  states.isAlreadyGoing = selectedGuest.isGoing;
 }
 
-function onFieldsUpdate(fieldData: Record<string, any>) {
-  const guestFromList = (findGuestFromList(fieldData.fullname) ||
-    {}) as T.Guest;
-
-  guestData.value = {
-    ...guestFromList,
-    ...guestData.value,
-    ...fieldData,
-  };
-}
-
-function findGuestFromList(fullname: string = "") {
-  return guestList.find(
-    (guest) =>
-      guest.fullname.toLocaleLowerCase() === fullname.toLocaleLowerCase()
-  );
-}
-
-async function onSendRsvp() {
-  guestData.value = {
-    ...guestData.value,
-    isGoing: isGoing.value,
-  };
-
-  if (!guestData.value.mobileNumber) {
-    mobileNumberError.value = "Please input a mobile number";
+function handleFieldUpdate(fieldData: Partial<T.Guest>) {
+  if (!states.selectedGuest) {
     return;
   }
 
-  if (guestData.value.mobileNumber) {
-    const isNumberValid = validateMobileNumber(guestData.value.mobileNumber);
+  states.selectedGuest = {
+    ...states.selectedGuest,
+    ...fieldData,
+  };
+}
+
+function handleInputChange(query: string) {
+  if (query?.length >= 3) {
+    return;
+  }
+
+  states.isAlreadyGoing = false;
+  states.selectedGuest = null;
+  states.mobileNumberError = "";
+}
+
+function findGuestFromList(fullname: string = "") {
+  const _selectedGuest = states.guestList?.find(
+    (guest) =>
+      guest.fullname.toLocaleLowerCase() === fullname.toLocaleLowerCase()
+  );
+
+  return _selectedGuest || ({} as T.Guest);
+}
+
+async function handleSubmit() {
+  const guestData = {
+    ...states.selectedGuest,
+    isGoing: states.isGoing,
+  };
+
+  if (!guestData.mobileNumber) {
+    states.mobileNumberError = "Please input a mobile number";
+    return;
+  }
+
+  if (guestData.mobileNumber) {
+    const isNumberValid = validateMobileNumber(guestData.mobileNumber);
 
     if (!isNumberValid) {
       return;
     }
 
-    mobileNumberError.value = "";
+    states.mobileNumberError = "";
   }
 
-  const response = await api.updateRow(guestData.value);
+  const response = await api.updateRow(guestData);
 
   if (response?.status === "KO") {
     return;
   }
 
-  isRsvpJustSent.value = true;
-  isSuccess.value = guestData.value.isGoing as boolean;
+  states.isRsvpSent = true;
 }
 
 function validateMobileNumber(mobileNumber: string) {
@@ -120,36 +136,43 @@ function validateMobileNumber(mobileNumber: string) {
   const isNumberGlobal = mobileNumber.startsWith("+63");
 
   if (isNumberLocal && mobileNumber.length !== 11) {
-    mobileNumberError.value = "Invalid Mobile Number";
+    states.mobileNumberError = "Invalid Mobile Number";
     return false;
   }
 
   if (isNumberGlobal && mobileNumber.length !== 13) {
-    mobileNumberError.value = "Invalid Mobile Number";
+    states.mobileNumberError = "Invalid Mobile Number";
     return false;
   }
 
   if (!isNumberLocal && !isNumberGlobal) {
-    mobileNumberError.value = "Invalid Mobile Number";
+    states.mobileNumberError = "Invalid Mobile Number";
     return false;
   }
 
   return true;
 }
 
+function handleRsvpAgain() {
+  states.isRsvpSent = false;
+  states.selectedGuest = null;
+}
+
 function onSlideToggle(event: Event) {
   const targetEl = event.target as HTMLDivElement;
   const slideToggleEl = targetEl.closest(".slide-toggle") as HTMLDivElement;
 
-  isGoing.value = !isGoing.value;
+  if (!states.selectedGuest) {
+    return;
+  }
 
-  if (!isGoing.value) {
+  states.isGoing = !states.isGoing;
+
+  if (!states.isGoing) {
     slideToggleEl.classList.add("no");
   } else {
     slideToggleEl.classList.remove("no");
   }
-
-  isReasonVisible.value = !isGoing.value;
 }
 </script>
 
@@ -158,37 +181,48 @@ function onSlideToggle(event: Event) {
 
 .RSVP
   +fx-col
+  align-items: center
 
   header
     text-align: center
     +m-b(rem(48))
 
-    img
-      margin: 0 auto
-      filter: drop-shadow(0 0 10px rgba($dark, 0.5))
-      +m-b(rem(16))
+  .prenup-pic
+    margin: 0 auto
+    filter: drop-shadow(0 0 10px rgba($dark, 0.5))
+    +m-b(rem(16))
 
-      +media(mobile)
-        max-width: rem(320)
+    +media(mobile)
+      max-width: rem(320)
 
-      +media((tablet, desktop))
-        max-width: rem(480)
+    +media((tablet, desktop))
+      max-width: rem(480)
+
+  main
+    +m-x(auto)
+    width: 100%
+    max-width: 32.5rem
 
   h1
     +playlist-script(38)
     +m-b(rem(18))
     color: $purple
 
-  p
+  .subtitle
     +sensa-wild-fill(20)
     +m-b(rem(18))
     color: $dark
 
-  .rsvp-flow
+  .flow
     +m-y(auto)
     display: flex
     flex-direction: column
-    gap: rem(32)
+    gap: rem(16)
+
+  .already-going
+    +sensa-wild-fill(20)
+    color: $dark
+    text-align: center
 
   .form
     display: flex
@@ -218,10 +252,16 @@ function onSlideToggle(event: Event) {
   .reason
     +m-t(rem(32))
 
-  .finish-message
+  .flow-finish
     +sensa-wild-fill(20)
     text-align: center
     margin: auto
+
+    span
+      display: block
+
+    button
+      margin-top: 1.5rem
 
   .slide-toggle
     +sensa-wild-fill(18)

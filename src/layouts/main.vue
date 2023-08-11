@@ -1,11 +1,11 @@
 <template lang="pug">
 div.MainLayout(ref="mainRef")
-  img.corner-image(src="/images/flowers-2.png")
-  img.corner-image(src="/images/flowers-3.png")
   NavBar
   div.content-wrapper
     slot
     img.logo(src="/images/logo.png")
+  img.bottom-flowers(src="/images/flowers-5.png")
+  img.bottom-flowers(src="/images/flowers-5.png")
   Icon(name="caret-down")
 </template>
 
@@ -42,26 +42,10 @@ onMounted(() => {
 
   .content-wrapper
     +fx-col
-    +p-y(rem(32), rem(40))
+    +p-y(2rem, 3.5rem)
     overflow-y: scroll
     height: 100%
     width: 100%
-
-  .corner-image
-    +pos-abs
-    opacity: 0.6
-
-    &:first-of-type
-      +w(rem(186))
-      bottom: -72px
-      left: 24px
-      transform: rotateY(180deg) rotate(270deg)
-
-    &:nth-of-type(2)
-      +w(rem(229))
-      transform: rotate(270deg)
-      bottom: -62px
-      right: -14px
 
   .NavBar
     justify-content: center
@@ -78,6 +62,15 @@ onMounted(() => {
   & > :deep(.Icon)
     +pos-abs
     bottom: 0
+
+  .bottom-flowers
+    +pos-abs
+    bottom: -17px
+    height: 101px
+    left: -53px
+
+    &:nth-of-type(2)
+      left: 253px
 
 +media((tablet, desktop))
   .MainLayout

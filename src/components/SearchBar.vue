@@ -1,10 +1,10 @@
 <template lang="pug">
 div.SearchBar
   div
-    input(placeholder="Search your name" @input="onSearch" @click="onSearchBarClick" :value="query || ''" autocomplete="no")
-    ul(v-if="hasSearched").search-result
+    input(placeholder="Search your name" @input="onSearch" :value="query || ''" autocomplete="no")
+    ul(v-if="areResultsVisible").search-result
       li(v-for="guest in filteredList" @click="onResultItemClick") {{ guest.fullname }}
-      li(v-if="isQueryEmpty") Sorry, you're not on the list 😔
+      li(v-if="!filteredList.length") Sorry, you're not on the list 😔
 </template>
 
 <script setup lang="ts">
@@ -12,9 +12,7 @@ import * as T from "@/core/types";
 
 const query = ref("");
 const filteredList = ref<T.Guest[]>([]);
-const isResultItemSelected = ref(false);
-const isQueryEmpty = ref(false);
-const hasSearched = ref(false);
+const areResultsVisible = ref(false);
 
 const props = defineProps({
   name: {
@@ -27,11 +25,14 @@ const props = defineProps({
   },
 });
 
-const emit = defineEmits(["input-update"]);
+const emit = defineEmits(["input-change", "result-selected"]);
 
 function onSearch(event: Event) {
   const _query = (event.target as HTMLInputElement).value;
   query.value = _query;
+  areResultsVisible.value = false;
+
+  emit("input-change", query.value);
 
   if (!_query.length) {
     filteredList.value = [];
@@ -41,7 +42,7 @@ function onSearch(event: Event) {
     return;
   }
 
-  hasSearched.value = true;
+  areResultsVisible.value = true;
 
   filteredList.value = (props.searchList as T.Guest[]).filter((guest) => {
     const lowerCaseFullname = guest.fullname.toLocaleLowerCase();
@@ -49,23 +50,14 @@ function onSearch(event: Event) {
 
     return lowerCaseFullname.includes(lowerCaseQuery);
   });
-
-  isQueryEmpty.value = !filteredList.value.length;
-}
-
-function onSearchBarClick() {
-  isQueryEmpty.value = false;
-  isResultItemSelected.value = false;
-  filteredList.value = [];
 }
 
 function onResultItemClick(event: Event) {
   const resultItemEl = event.target as HTMLLIElement;
 
-  hasSearched.value = false;
-  isResultItemSelected.value = true;
+  areResultsVisible.value = false;
   query.value = resultItemEl.textContent as string;
-  emit("input-update", {
+  emit("result-selected", {
     [props.name]: query.value,
   });
 }

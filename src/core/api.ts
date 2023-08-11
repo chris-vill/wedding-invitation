@@ -1,14 +1,18 @@
 import * as T from "./types";
 
 export async function getSheet() {
-  const { data } = await useFetch<{
-    data: T.Guest[];
-    status: "OK" | "KO";
-  }>("/api/guests", {
-    method: "GET",
-  });
+  try {
+    const { data } = await useFetch<{
+      data: T.Guest[];
+      status: "OK" | "KO";
+    }>("/api/guests", {
+      method: "GET",
+    });
 
-  return toRaw(data.value);
+    return toRaw(data.value);
+  } catch (err) {
+    console.log(err);
+  }
 }
 
 export async function updateRow(payload: Partial<T.Guest>) {
