@@ -217,7 +217,7 @@ onBeforeUnmount(() => {
 
     &__initials
       +more-sugar(16)
-      color: red
+      color: gray
 
   .answer
     +fx
@@ -226,7 +226,7 @@ onBeforeUnmount(() => {
 
     &__initials
       +more-sugar(16)
-      color: green
+      color: purple
 
     &__multiple
       +fx-col

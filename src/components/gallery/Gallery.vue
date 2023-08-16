@@ -13,12 +13,12 @@ const images = [...Array(55)].map((x, i) => i + 1);
 .Gallery
   +fx
   flex-wrap: wrap
-  gap: 16px
+  gap: 42px
   height: 100%
+  justify-content: center
 
   +media(mobile)
     img
-      height: 188px
       object-fit: contain
-      width: 178px
+      width: 320px
 </style>
