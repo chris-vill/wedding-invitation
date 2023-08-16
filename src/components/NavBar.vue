@@ -38,11 +38,10 @@ const navItems = [
     label: "Entourage",
     route: "/entourage",
   },
-  // TODO: develop when we have pictures
-  // {
-  //   label: "Gallery",
-  //   route: "/gallery",
-  // },
+  {
+    label: "Gallery",
+    route: "/gallery",
+  },
   {
     label: "FAQs",
     route: "/faq",
