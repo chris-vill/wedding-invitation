@@ -5,7 +5,7 @@ div.Message
     span For You
   img(src="/images/prenup_1.png").animated.animation
   p.animated.animation
-    | We're getting married on the 9th of September 2023 and we will be most grateful for your presence in joining us in our matrimonial celebration!
+    | We're getting married on the 9th of September 2023 and we'll be most grateful for your presence in joining us in our matrimonial celebration!
   p.animated.animation
     | We've created this website as a helpful resource for all the need-to-know details in the lead up to our big day.
   p.animated.animation

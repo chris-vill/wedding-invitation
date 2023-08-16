@@ -11,30 +11,10 @@ div.MainLayout(ref="mainRef")
 
 <script setup lang="ts">
 const mainRef = ref(null);
-const hideLogo = ref(false);
-// const route = useRoute();
-
-// watch(route, () => {
-//   if (route.path === "/gallery") {
-//     hideLogo.value = true;
-//   } else {
-//     hideLogo.value = false;
-//   }
-// });
 
 onMounted(() => {
-  const mainEl = mainRef.value;
-  const audio = document?.createElement("audio");
-  audio.src = "/audio/wedding-themed-music.mp3";
-  audio.autoplay = true;
+  const audio = new Audio("/audio/wedding-themed-music.mp3");
   audio.loop = true;
-  audio.controls = false;
-
-  if (!mainEl) {
-    return;
-  }
-
-  (mainEl as HTMLDivElement).appendChild(audio);
   audio.play();
 });
 </script>

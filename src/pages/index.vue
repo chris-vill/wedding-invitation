@@ -5,7 +5,7 @@ div.HomePage
     br
     | Married!
   p.message.animated.animation
-    | Dearest family and friends, we will be more than delighted
+    | Dearest family and friends, we'll be more than delighted
     br
     | to have you celebrate with us on our wedding day!
   div.couple.animated.animation
