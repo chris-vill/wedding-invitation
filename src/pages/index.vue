@@ -150,7 +150,7 @@ onBeforeUnmount(() => {
   .location
     +fx-col
     align-items: center
-    margin-bottom: rem(48)
+    margin-bottom: 2.5rem
     text-align: center
 
     span:first-child
@@ -165,7 +165,7 @@ onBeforeUnmount(() => {
       +lora(16)
 
   .verse
-    +breathing(18)
+    +dancing-script(24)
     text-align: center
 
   .animation

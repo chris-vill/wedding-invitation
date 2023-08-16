@@ -45,10 +45,10 @@ function onSearch(event: Event) {
   areResultsVisible.value = true;
 
   filteredList.value = (props.searchList as T.Guest[]).filter((guest) => {
-    const lowerCaseFullname = guest.fullname.toLocaleLowerCase();
+    const lowerCaseFullname = guest.fullname?.toLocaleLowerCase();
     const lowerCaseQuery = query.value.toLocaleLowerCase();
 
-    return lowerCaseFullname.includes(lowerCaseQuery);
+    return lowerCaseFullname && lowerCaseFullname.includes(lowerCaseQuery);
   });
 }
 

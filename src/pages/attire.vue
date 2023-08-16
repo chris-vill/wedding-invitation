@@ -13,7 +13,7 @@ div.AttirePage
       span Please do not wear white, cream, or ivory colors
 
   div.instruction.color-palette.animated.animation
-    span We request our guests to be in any of these colors on our special day <br> (refer to the palette on the right)
+    span We request our guests to be in any of these colors on our special day <br> (any shades of purple/violet or gray)
     img.illustration(src="/images/color_palette.png")
 </template>
 

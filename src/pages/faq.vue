@@ -138,6 +138,28 @@ div.FAQ
   div.item
     h5.question.animated.animation
       b.question__initials Q:
+      span Do you have your official wedding hashtag?
+    span.answer.animated.animation
+      b.answer__initials A:
+      div.answer__multiple
+        span Yes we do! Kindly share your captured moments using the hashtags
+        span #journeyTOPHEReverwithMJ
+        span #CHRISmadetherightJOYce
+        span #MJdrivesmeCHRISy
+        span 
+        span We'd love to see all those beautiful photos 🥰
+
+  div.item
+    h5.question.animated.animation
+      b.question__initials Q:
+      span Do you have any gift preferences?
+    span.answer.animated.animation
+      b.answer__initials A:
+      span As love is what the wedding is all about, your presence is one we can't celebrate without. But should you still believe that a gift is worth giving, a monetary gift for our future is a delightful blessing.
+
+  div.item
+    h5.question.animated.animation
+      b.question__initials Q:
       span How can we help the couple have the best time during the wedding?
     span.answer.animated.animation
       b.answer__initials A:

@@ -3,13 +3,13 @@ div.RSVP
   header
     h1 RSVP
     img.prenup-pic(src="/images/prenup_4.png")
-    p.subtitle The favor of your reply is greatly appreciated
-    p.subtitle on or before
-    p.subtitle August 22, 2023
+    p.subtitle The favor of your reply is greatly
+    p.subtitle appreciated on or before
+    p.subtitle.due-date August 22, 2023
 
   main
     div.flow(v-if="!states?.isRsvpSent")
-      SearchBar(v-if="!states?.isRsvpSent" name="fullname" :search-list="states?.guestList" @result-selected="onSearch" @input-change="handleInputChange")
+      SearchBar(v-if="!states?.isRsvpSent && states?.guestList" name="fullname" :search-list="states.guestList" @result-selected="onSearch" @input-change="handleInputChange")
 
       div.form(v-if="states?.selectedGuest && !states.isAlreadyGoing")
         Input(name="mobileNumber" placeholder="Mobile Number *" @input-update="handleFieldUpdate")
@@ -33,7 +33,9 @@ div.RSVP
       | You already sent an RSVP
 
     div.flow-finish(v-if="states?.isRsvpSent")
-      span(v-isf="states.isGoing") Thanks for confirming, see you on our wedding day! 🥰
+      span(v-if="states.isGoing")
+        span Thanks for confirming,
+        span see you on our wedding day! 🥰
       span(v-if="!states.isGoing") Thanks for confirming 🥹
       Button(label="RSVP a companion?" @click="handleRsvpAgain")
 </template>
@@ -43,14 +45,13 @@ import * as api from "@/core/api";
 import * as T from "@/core/types";
 
 const states = reactive<{
-  guestList: T.Guest[];
+  guestList?: T.Guest[];
   isAlreadyGoing: boolean;
   isGoing: boolean;
   isRsvpSent?: boolean;
   mobileNumberError?: string;
   selectedGuest?: T.Guest | null;
 }>({
-  guestList: [],
   isAlreadyGoing: false,
   isGoing: true,
 });
@@ -93,10 +94,13 @@ function handleInputChange(query: string) {
 }
 
 function findGuestFromList(fullname: string = "") {
-  const _selectedGuest = states.guestList?.find(
-    (guest) =>
-      guest.fullname.toLocaleLowerCase() === fullname.toLocaleLowerCase()
-  );
+  const _selectedGuest = states.guestList?.find((guest) => {
+    const lowerCaseFullname = guest.fullname?.toLocaleLowerCase();
+
+    return (
+      lowerCaseFullname && lowerCaseFullname === fullname.toLocaleLowerCase()
+    );
+  });
 
   return _selectedGuest || ({} as T.Guest);
 }
@@ -185,7 +189,7 @@ function onSlideToggle(event: Event) {
 
   header
     text-align: center
-    +m-b(rem(48))
+    +m-b(2rem)
 
   .prenup-pic
     margin: 0 auto
@@ -212,6 +216,10 @@ function onSlideToggle(event: Event) {
     +sensa-wild-fill(20)
     +m-b(rem(18))
     color: $dark
+
+  .due-date
+    font-weight: 900
+    color: $purple
 
   .flow
     +m-y(auto)

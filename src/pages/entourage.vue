@@ -26,7 +26,7 @@ div.EntouragePage
         span Mrs. Myra Ganaden
       div
         span Mr. Jose Dioquino
-        span Mrs. Lea Cagabhion
+        span Mrs. Eden Anglo
       div
         span Mr. Ronnie Bersola
         span Mrs. Maria Nonica Bersola
@@ -35,7 +35,7 @@ div.EntouragePage
         span Mrs. Joana Pintac
       div
         span Mr. Jerson Andes
-        span Mrs. Eden Anglo
+        span Mrs. Lea Cagabhion
       div
         span Mr. Romulo Sison Jr.
         span Mrs. Arliza Villarosa
@@ -76,9 +76,9 @@ div.EntouragePage
     div
       h2 BRIDESMAIDS
       span Ashley Gabrielle Villaran
-      span Hazel Joy Tabisola
-      span Ma. Sarah Jane Paguirigan
       span Marjorie Andes
+      span Ma. Sarah Jane Paguirigan
+      span Hazel Joy Tabisola
 
   section.kids.animated.animation
     h2

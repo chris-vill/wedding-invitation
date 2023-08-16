@@ -7,22 +7,22 @@ div.TravelPage
   .location-container
     .location.lourdes.animated.animation
       img(src="/images/lourdes.jpg")
-      span Our Lady of Lourdes, Tagaytay
+      span Our Lady of Lourdes Parish
       a(href="https://ul.waze.com/ul?preview_venue_id=79298701.792724867.1431116&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location") Go To Church
     
     .location.aquila.animated.animation
       img(src="/images/aquila.jpg")
-      span Aquila Crystal Palace, Tagaytay
+      span Aquila Crystal Palace
       a(href="https://ul.waze.com/ul?preview_venue_id=79298701.792724868.10452740&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location") Go To Reception
     
   //- h3 Own a car? scan the QR codes below
   .qr-container.animated.animation
     .qr-code
       img(src="/images/our-lady-of-lourdes-qr.png")
-      span Our Lady of Lourdes, Tagaytay
+      span Our Lady of Lourdes Parish
     .qr-code
       img(src="/images/aquila-crystal-palace-qr.png")
-      span Aquila Crystal Palace, Tagaytay
+      span Aquila Crystal Palace
 </template>
 
 <script lang="ts" setup>

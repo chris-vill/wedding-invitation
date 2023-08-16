@@ -3,7 +3,7 @@ div.MainLayout(ref="mainRef")
   NavBar
   div.content-wrapper
     slot
-    img.logo(v-if="hideLogo" src="/images/logo.png")
+    img.logo(src="/images/logo.png")
   img.bottom-flowers(src="/images/flowers-5.png")
   img.bottom-flowers(src="/images/flowers-5.png")
   Icon(name="caret-down")
@@ -12,15 +12,15 @@ div.MainLayout(ref="mainRef")
 <script setup lang="ts">
 const mainRef = ref(null);
 const hideLogo = ref(false);
-const route = useRoute();
+// const route = useRoute();
 
-watch(route, () => {
-  if (route.path === "/gallery") {
-    hideLogo.value = true;
-  } else {
-    hideLogo.value = false;
-  }
-});
+// watch(route, () => {
+//   if (route.path === "/gallery") {
+//     hideLogo.value = true;
+//   } else {
+//     hideLogo.value = false;
+//   }
+// });
 
 onMounted(() => {
   const mainEl = mainRef.value;
