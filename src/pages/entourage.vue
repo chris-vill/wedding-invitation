@@ -101,6 +101,7 @@ div.EntouragePage
       span Margaux Sambajon
       span Mavis Riley Villaran
       span Millie Kassidy Anglo
+      span Kandysse Maddison Anglo
 </template>
 
 <script lang="ts" setup>
