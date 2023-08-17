@@ -126,7 +126,7 @@ div.FAQ
   div.item
     h5.question.animated.animation
       b.question__initials Q:
-      span Can we take pictures and videos during the wedding? (may idadagdag)
+      span Can we take pictures and videos during the wedding?
     span.answer.animated.animation
       b.answer__initials A: 
       div.answer__multiple
