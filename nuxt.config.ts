@@ -5,7 +5,7 @@ export default defineNuxtConfig({
       title: "journeyTOPHEReverwithMJ",
       meta: [
         { name: "og:title", content: "journeyTOPHEReverwithMJ" },
-        { name: "og:image", content: "/images/logo.png" },
+        { name: "og:image", content: "/images/logo_w_bg.png" },
         { name: "og:image:height", content: "140" },
         { name: "og:image:width", content: "140" },
       ],

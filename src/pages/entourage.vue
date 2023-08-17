@@ -54,7 +54,7 @@ div.EntouragePage
     div.col-3
       div
         h3 To Light Our Path
-        span Gody Torres Jr.
+        span Godofredo Torres Jr.
         span Jonah Marie Torres
       div
         h3 To Clothe Us As One
@@ -142,15 +142,15 @@ onBeforeUnmount(() => {
     color: $purple
 
   h2
-    +sensa-wild-fill(18)
+    +sensa-wild-fill(19)
     color: $purple-dark-20
 
   h3
-    +sensa-wild-fill(16)
+    +sensa-wild-fill(17)
     color: $purple-dark-20
 
   span
-    +playlist-script(16)
+    +playlist-script(17)
     color: $purple-dark-40
     display: block
 
