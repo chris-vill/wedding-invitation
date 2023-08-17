@@ -70,7 +70,7 @@ export default {
       title: "journeyTOPHEReverwithMJ",
       meta: [
         { name: "og:title", content: "MJdrivesmeCHRISy" },
-        { name: "og:image", content: "/images/logo_w_bg.png" },
+        { name: "og:image", content: "/images/logo.png" },
         { name: "og:image:height", content: "200" },
         { name: "og:image:width", content: "200" },
       ],

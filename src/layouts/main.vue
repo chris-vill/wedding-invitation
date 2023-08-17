@@ -3,7 +3,7 @@ div.MainLayout(ref="mainRef")
   NavBar
   div.content-wrapper
     slot
-    img.logo(src="/images/logo.png")
+    img.logo(src="/images/logo_1.png")
   img.bottom-flowers(src="/images/flowers-5.png")
   img.bottom-flowers(src="/images/flowers-5.png")
   Icon(name="caret-down")
