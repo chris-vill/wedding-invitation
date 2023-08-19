@@ -28,7 +28,7 @@ div.EntouragePage
         span Mr. Jose Dioquino
         span Mrs. Eden Anglo
       div
-        span Mr. Ronnie Bersola
+        span Mr. Ronald Bersola
         span Mrs. Maria Nonica Bersola
       div
         span Mr. Jose Andes
