@@ -7,9 +7,10 @@ div.RSVP
     p.subtitle appreciated on or before
     p.subtitle.due-date August 22, 2023
 
-  main
+  LoadingSpinner(v-if="!states?.guestList")
+  main(v-if="states?.guestList")
     div.flow(v-if="!states?.isRsvpSent")
-      SearchBar(v-if="!states?.isRsvpSent && states?.guestList" name="fullname" :search-list="states.guestList" @result-selected="onSearch" @input-change="handleInputChange")
+      SearchBar(v-if="!states?.isRsvpSent" name="fullname" :search-list="states.guestList" @result-selected="onSearch" @input-change="handleInputChange")
 
       div.form(v-if="states?.selectedGuest && !states.isAlreadyGoing")
         Input(name="mobileNumber" placeholder="Mobile Number *" @input-update="handleFieldUpdate")
