@@ -5,7 +5,7 @@ div.RSVP
     img.prenup-pic(src="/images/prenup_4.png")
     p.subtitle The favor of your reply is greatly
     p.subtitle appreciated on or before
-    p.subtitle.due-date August 22, 2023
+    p.subtitle.due-date August 24, 2023
 
   LoadingSpinner(v-if="!states?.guestList")
   main(v-if="states?.guestList")
